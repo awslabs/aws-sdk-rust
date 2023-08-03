@@ -36,8 +36,7 @@ use aws_smithy_http::result::SdkError;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypeErasedError};
 use phase::Phase;
-use std::fmt::Debug;
-use std::mem;
+use std::{fmt, mem};
 use tracing::{error, trace};
 
 pub type Input = TypeErasedBox;
@@ -56,7 +55,7 @@ type Response = HttpResponse;
 #[derive(Debug)]
 pub struct InterceptorContext<I = Input, O = Output, E = Error>
 where
-    E: Debug,
+    E: fmt::Debug,
 {
     pub(crate) input: Option<I>,
     pub(crate) output_or_error: Option<Result<O, OrchestratorError<E>>>,
@@ -84,7 +83,7 @@ impl InterceptorContext<Input, Output, Error> {
 
 impl<I, O, E> InterceptorContext<I, O, E>
 where
-    E: Debug,
+    E: fmt::Debug,
 {
     /// Decomposes the context into its constituent parts.
     #[doc(hidden)]
@@ -113,22 +112,18 @@ where
             ..
         } = self;
         output_or_error
-            .expect("output_or_error must always beset before finalize is called.")
+            .expect("output_or_error must always be set before finalize is called.")
             .map_err(|error| OrchestratorError::into_sdk_error(error, &phase, response))
     }
 
     /// Retrieve the input for the operation being invoked.
-    pub fn input(&self) -> &I {
-        self.input
-            .as_ref()
-            .expect("input is present in 'before serialization'")
+    pub fn input(&self) -> Option<&I> {
+        self.input.as_ref()
     }
 
     /// Retrieve the input for the operation being invoked.
-    pub fn input_mut(&mut self) -> &mut I {
-        self.input
-            .as_mut()
-            .expect("input is present in 'before serialization'")
+    pub fn input_mut(&mut self) -> Option<&mut I> {
+        self.input.as_mut()
     }
 
     /// Takes ownership of the input.
@@ -143,18 +138,14 @@ where
 
     /// Retrieve the transmittable request for the operation being invoked.
     /// This will only be available once request marshalling has completed.
-    pub fn request(&self) -> &Request {
-        self.request
-            .as_ref()
-            .expect("request populated in 'before transmit'")
+    pub fn request(&self) -> Option<&Request> {
+        self.request.as_ref()
     }
 
     /// Retrieve the transmittable request for the operation being invoked.
     /// This will only be available once request marshalling has completed.
-    pub fn request_mut(&mut self) -> &mut Request {
-        self.request
-            .as_mut()
-            .expect("request populated in 'before transmit'")
+    pub fn request_mut(&mut self) -> Option<&mut Request> {
+        self.request.as_mut()
     }
 
     /// Takes ownership of the request.
@@ -170,17 +161,13 @@ where
     }
 
     /// Returns the response.
-    pub fn response(&self) -> &Response {
-        self.response.as_ref().expect(
-            "response set in 'before deserialization' and available in the phases following it",
-        )
+    pub fn response(&self) -> Option<&Response> {
+        self.response.as_ref()
     }
 
     /// Returns a mutable reference to the response.
-    pub fn response_mut(&mut self) -> &mut Response {
-        self.response.as_mut().expect(
-            "response is set in 'before deserialization' and available in the following phases",
-        )
+    pub fn response_mut(&mut self) -> Option<&mut Response> {
+        self.response.as_mut()
     }
 
     /// Set the output or error for the operation being invoked.
@@ -189,23 +176,19 @@ where
     }
 
     /// Returns the deserialized output or error.
-    pub fn output_or_error(&self) -> Result<&O, &OrchestratorError<E>> {
-        self.output_or_error
-            .as_ref()
-            .expect("output set in Phase::AfterDeserialization")
-            .as_ref()
+    pub fn output_or_error(&self) -> Option<Result<&O, &OrchestratorError<E>>> {
+        self.output_or_error.as_ref().map(|res| res.as_ref())
     }
 
     /// Returns the mutable reference to the deserialized output or error.
-    pub fn output_or_error_mut(&mut self) -> &mut Result<O, OrchestratorError<E>> {
-        self.output_or_error
-            .as_mut()
-            .expect("output set in 'after deserialization'")
+    pub fn output_or_error_mut(&mut self) -> Option<&mut Result<O, OrchestratorError<E>>> {
+        self.output_or_error.as_mut()
     }
 
     /// Advance to the Serialization phase.
     #[doc(hidden)]
     pub fn enter_serialization_phase(&mut self) {
+        trace!("entering \'serialization\' phase");
         debug_assert!(
             self.phase.is_before_serialization(),
             "called enter_serialization_phase but phase is not before 'serialization'"
@@ -216,6 +199,7 @@ where
     /// Advance to the BeforeTransmit phase.
     #[doc(hidden)]
     pub fn enter_before_transmit_phase(&mut self) {
+        trace!("entering \'before transmit\' phase");
         debug_assert!(
             self.phase.is_serialization(),
             "called enter_before_transmit_phase but phase is not 'serialization'"
@@ -228,14 +212,17 @@ where
             self.request.is_some(),
             "request must be set before calling enter_before_transmit_phase"
         );
-        self.request_checkpoint = try_clone(self.request());
-        self.tainted = true;
+        self.request_checkpoint = try_clone(
+            self.request()
+                .expect("request is set before calling enter_before_transmit_phase"),
+        );
         self.phase = Phase::BeforeTransmit;
     }
 
     /// Advance to the Transmit phase.
     #[doc(hidden)]
     pub fn enter_transmit_phase(&mut self) {
+        trace!("entering \'transmit\' phase");
         debug_assert!(
             self.phase.is_before_transmit(),
             "called enter_transmit_phase but phase is not before transmit"
@@ -246,6 +233,7 @@ where
     /// Advance to the BeforeDeserialization phase.
     #[doc(hidden)]
     pub fn enter_before_deserialization_phase(&mut self) {
+        trace!("entering \'before deserialization\' phase");
         debug_assert!(
             self.phase.is_transmit(),
             "called enter_before_deserialization_phase but phase is not 'transmit'"
@@ -264,6 +252,7 @@ where
     /// Advance to the Deserialization phase.
     #[doc(hidden)]
     pub fn enter_deserialization_phase(&mut self) {
+        trace!("entering \'deserialization\' phase");
         debug_assert!(
             self.phase.is_before_deserialization(),
             "called enter_deserialization_phase but phase is not 'before deserialization'"
@@ -274,6 +263,7 @@ where
     /// Advance to the AfterDeserialization phase.
     #[doc(hidden)]
     pub fn enter_after_deserialization_phase(&mut self) {
+        trace!("entering \'after deserialization\' phase");
         debug_assert!(
             self.phase.is_deserialization(),
             "called enter_after_deserialization_phase but phase is not 'deserialization'"
@@ -285,23 +275,45 @@ where
         self.phase = Phase::AfterDeserialization;
     }
 
-    // Returns false if rewinding isn't possible
-    pub fn rewind(&mut self, _cfg: &mut ConfigBag) -> bool {
-        // If before transmit was never touched, then we don't need to rewind
+    /// Set the request checkpoint. This should only be called once, right before entering the retry loop.
+    #[doc(hidden)]
+    pub fn save_checkpoint(&mut self) {
+        trace!("saving request checkpoint...");
+        self.request_checkpoint = self.request().and_then(try_clone);
+        match self.request_checkpoint.as_ref() {
+            Some(_) => trace!("successfully saved request checkpoint"),
+            None => trace!("failed to save request checkpoint: request body could not be cloned"),
+        }
+    }
+
+    /// Returns false if rewinding isn't possible
+    #[doc(hidden)]
+    pub fn rewind(&mut self, _cfg: &mut ConfigBag) -> RewindResult {
+        // If request_checkpoint was never set, but we've already made one attempt,
+        // then this is not a retryable request
+        if self.request_checkpoint.is_none() && self.tainted {
+            return RewindResult::Impossible;
+        }
+
         if !self.tainted {
-            return true;
+            // The first call to rewind() happens before the request is ever touched, so we don't need
+            // to clone it then. However, the request must be marked as tainted so that subsequent calls
+            // to rewind() properly reload the saved request checkpoint.
+            self.tainted = true;
+            return RewindResult::Unnecessary;
         }
-        // If request_checkpoint was never set, then this is not a retryable request
-        if self.request_checkpoint.is_none() {
-            return false;
-        }
-        // Otherwise, rewind back to the beginning of BeforeTransmit
+
+        // Otherwise, rewind to the saved request checkpoint
         // TODO(enableNewSmithyRuntime): Also rewind the ConfigBag
         self.phase = Phase::BeforeTransmit;
         self.request = try_clone(self.request_checkpoint.as_ref().expect("checked above"));
+        assert!(
+            self.request.is_some(),
+            "if the request wasn't cloneable, then we should have already return from this method."
+        );
         self.response = None;
         self.output_or_error = None;
-        true
+        RewindResult::Occurred
     }
 
     /// Mark this context as failed due to errors during the operation. Any errors already contained
@@ -324,6 +336,33 @@ where
             .as_ref()
             .map(Result::is_err)
             .unwrap_or_default()
+    }
+}
+
+/// The result of attempting to rewind a request.
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[doc(hidden)]
+pub enum RewindResult {
+    /// The request couldn't be rewound because it wasn't cloneable.
+    Impossible,
+    /// The request wasn't rewound because it was unnecessary.
+    Unnecessary,
+    /// The request was rewound successfully.
+    Occurred,
+}
+
+impl fmt::Display for RewindResult {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            RewindResult::Impossible => write!(
+                f,
+                "The request couldn't be rewound because it wasn't cloneable."
+            ),
+            RewindResult::Unnecessary => {
+                write!(f, "The request wasn't rewound because it was unnecessary.")
+            }
+            RewindResult::Occurred => write!(f, "The request was rewound successfully."),
+        }
     }
 }
 
@@ -356,7 +395,13 @@ mod tests {
         let output = TypedBox::new("output".to_string()).erase();
 
         let mut context = InterceptorContext::new(input);
-        assert_eq!("input", context.input().downcast_ref::<String>().unwrap());
+        assert_eq!(
+            "input",
+            context
+                .input()
+                .and_then(|i| i.downcast_ref::<String>())
+                .unwrap()
+        );
         context.input_mut();
 
         context.enter_serialization_phase();
@@ -408,7 +453,13 @@ mod tests {
         let error = TypedBox::new(Error).erase_error();
 
         let mut context = InterceptorContext::new(input);
-        assert_eq!("input", context.input().downcast_ref::<String>().unwrap());
+        assert_eq!(
+            "input",
+            context
+                .input()
+                .and_then(|i| i.downcast_ref::<String>())
+                .unwrap()
+        );
 
         context.enter_serialization_phase();
         let _ = context.take_input();
@@ -419,10 +470,11 @@ mod tests {
                 .unwrap(),
         );
         context.enter_before_transmit_phase();
-
+        context.save_checkpoint();
+        assert_eq!(context.rewind(&mut cfg), RewindResult::Unnecessary);
         // Modify the test header post-checkpoint to simulate modifying the request for signing or a mutating interceptor
-        context.request_mut().headers_mut().remove("test");
-        context.request_mut().headers_mut().insert(
+        context.request_mut().unwrap().headers_mut().remove("test");
+        context.request_mut().unwrap().headers_mut().insert(
             "test",
             HeaderValue::from_static("request-modified-after-signing"),
         );
@@ -439,12 +491,12 @@ mod tests {
         context.enter_deserialization_phase();
         context.set_output_or_error(Err(OrchestratorError::operation(error)));
 
-        assert!(context.rewind(&mut cfg));
+        assert_eq!(context.rewind(&mut cfg), RewindResult::Occurred);
 
         // Now after rewinding, the test header should be its original value
         assert_eq!(
             "the-original-un-mutated-request",
-            context.request().headers().get("test").unwrap()
+            context.request().unwrap().headers().get("test").unwrap()
         );
 
         context.enter_transmit_phase();

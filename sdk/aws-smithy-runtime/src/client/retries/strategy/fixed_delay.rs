@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::client::orchestrator::interceptors::RequestAttempts;
 use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::BoxError;
+use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
 use aws_smithy_runtime_api::client::retries::{
     ClassifyRetry, RetryClassifiers, RetryReason, RetryStrategy, ShouldAttempt,
 };
@@ -44,18 +44,19 @@ impl RetryStrategy for FixedDelayRetryStrategy {
         cfg: &ConfigBag,
     ) -> Result<ShouldAttempt, BoxError> {
         // Look a the result. If it's OK then we're done; No retry required. Otherwise, we need to inspect it
-        let error = match ctx.output_or_error() {
-            Ok(_) => {
-                tracing::trace!("request succeeded, no retry necessary");
-                return Ok(ShouldAttempt::No);
-            }
-            Err(err) => err,
-        };
+        let output_or_error = ctx.output_or_error().expect(
+            "This must never be called without reaching the point where the result exists.",
+        );
+        if output_or_error.is_ok() {
+            tracing::trace!("request succeeded, no retry necessary");
+            return Ok(ShouldAttempt::No);
+        }
 
+        // Check if we're out of attempts
         let request_attempts: &RequestAttempts = cfg
             .get()
             .expect("at least one request attempt is made before any retry is attempted");
-        if request_attempts.attempts() == self.max_attempts {
+        if request_attempts.attempts() >= self.max_attempts as usize {
             tracing::trace!(
                 attempts = request_attempts.attempts(),
                 max_attempts = self.max_attempts,
@@ -67,7 +68,7 @@ impl RetryStrategy for FixedDelayRetryStrategy {
         let retry_classifiers = cfg
             .get::<RetryClassifiers>()
             .expect("a retry classifier is set");
-        let retry_reason = retry_classifiers.classify_retry(error);
+        let retry_reason = retry_classifiers.classify_retry(ctx);
 
         let backoff = match retry_reason {
             Some(RetryReason::Explicit(_)) => self.fixed_delay,

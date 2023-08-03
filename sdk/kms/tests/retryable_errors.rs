@@ -73,9 +73,11 @@ mod orchestrator_mode_tests {
     use aws_sdk_kms as kms;
     use aws_smithy_client::test_connection::infallible_connection_fn;
     use aws_smithy_http::result::SdkError;
-    use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
-    use aws_smithy_runtime_api::client::retries::RetryReason;
+    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    use aws_smithy_runtime_api::client::orchestrator::{HttpResponse, OrchestratorError};
+    use aws_smithy_runtime_api::client::retries::{ClassifyRetry, RetryReason};
     use aws_smithy_types::retry::ErrorKind;
+    use aws_smithy_types::type_erasure::{TypeErasedBox, TypeErasedError};
     use bytes::Bytes;
     use kms::operation::create_alias::CreateAliasError;
 
@@ -110,8 +112,11 @@ mod orchestrator_mode_tests {
         .await;
 
         dbg!(&err);
-        let classifier = AwsErrorCodeClassifier;
-        let retry_kind = classifier.classify_error(&err);
+        let classifier = AwsErrorCodeClassifier::<CreateAliasError>::new();
+        let mut ctx = InterceptorContext::new(TypeErasedBox::new("doesntmatter"));
+        let err = err.into_service_error();
+        ctx.set_output_or_error(Err(OrchestratorError::operation(TypeErasedError::new(err))));
+        let retry_kind = classifier.classify_retry(&ctx);
         assert_eq!(
             Some(RetryReason::Error(ErrorKind::ThrottlingError)),
             retry_kind
@@ -129,8 +134,11 @@ mod orchestrator_mode_tests {
         .await;
 
         dbg!(&err);
-        let classifier = AwsErrorCodeClassifier;
-        let retry_kind = classifier.classify_error(&err);
+        let classifier = AwsErrorCodeClassifier::<CreateAliasError>::new();
+        let mut ctx = InterceptorContext::new(TypeErasedBox::new("doesntmatter"));
+        let err = err.into_service_error();
+        ctx.set_output_or_error(Err(OrchestratorError::operation(TypeErasedError::new(err))));
+        let retry_kind = classifier.classify_retry(&ctx);
         assert_eq!(
             Some(RetryReason::Error(ErrorKind::ThrottlingError)),
             retry_kind

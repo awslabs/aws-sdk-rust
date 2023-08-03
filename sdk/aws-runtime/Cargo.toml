@@ -14,6 +14,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
 event-stream = ["dep:aws-smithy-eventstream", "aws-sigv4/sign-eventstream"]
+test-util = []
 
 [dependencies]
 http = "0.2.3"
@@ -30,6 +31,10 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
+version = "0.0.0-smithy-rs-head"
+
+[dependencies.aws-smithy-async]
+path = "../aws-smithy-async"
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-eventstream]
@@ -53,10 +58,6 @@ version = "0.0.0-smithy-rs-head"
 path = "../aws-smithy-types"
 version = "0.0.0-smithy-rs-head"
 
-[dependencies.aws-smithy-async]
-path = "../aws-smithy-async"
-version = "0.0.0-smithy-rs-head"
-
 [dependencies.aws-types]
 path = "../aws-types"
 version = "0.0.0-smithy-rs-head"
@@ -75,12 +76,22 @@ path = "../aws-credential-types"
 features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
+[dev-dependencies.aws-smithy-async]
+path = "../aws-smithy-async"
+features = ["test-util"]
+version = "0.0.0-smithy-rs-head"
+
+[dev-dependencies.aws-smithy-types]
+path = "../aws-smithy-types"
+features = ["test-util"]
+version = "0.0.0-smithy-rs-head"
+
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
 version = "0.0.0-smithy-rs-head"
 
-[dev-dependencies.aws-smithy-async]
-path = "../aws-smithy-async"
+[dev-dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
 features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 

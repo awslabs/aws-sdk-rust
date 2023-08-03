@@ -5,5 +5,5 @@
 
 pub mod connector;
 pub mod deserializer;
-pub mod interceptor;
+pub mod interceptors;
 pub mod serializer;

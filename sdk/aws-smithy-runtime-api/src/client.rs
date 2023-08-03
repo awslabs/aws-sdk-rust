@@ -24,3 +24,6 @@ pub mod runtime_plugin;
 
 /// Smithy auth runtime plugins
 pub mod auth;
+
+/// A type to track the number of requests sent by the orchestrator for a given operation.
+pub mod request_attempts;

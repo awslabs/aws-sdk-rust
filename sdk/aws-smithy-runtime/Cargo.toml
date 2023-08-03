@@ -62,6 +62,11 @@ path = "../aws-smithy-async"
 features = ["rt-tokio", "test-util"]
 version = "0.0.0-smithy-rs-head"
 
+[dev-dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
+features = ["test-util"]
+version = "0.0.0-smithy-rs-head"
+
 [dev-dependencies.tokio]
 version = "1.25"
 features = ["macros", "rt", "test-util"]

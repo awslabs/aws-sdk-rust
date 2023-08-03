@@ -7,6 +7,9 @@ edition = "2021"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
 
+[features]
+test-util = []
+
 [dependencies]
 itoa = "1.0.0"
 num-integer = "0.1.44"

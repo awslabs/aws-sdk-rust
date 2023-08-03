@@ -85,7 +85,9 @@ pub(super) async fn orchestrate_auth(
                     extract_endpoint_auth_scheme_config(endpoint, scheme_id)?;
 
                 let identity = identity_resolver.resolve_identity(cfg).await?;
-                let request = ctx.request_mut();
+                let request = ctx
+                    .request_mut()
+                    .expect("request is present before orchestrate_auth is called");
                 request_signer.sign_request(
                     request,
                     &identity,
@@ -219,7 +221,11 @@ mod tests {
 
         assert_eq!(
             "success!",
-            ctx.request().headers().get("Authorization").unwrap()
+            ctx.request()
+                .expect("request is set")
+                .headers()
+                .get("Authorization")
+                .unwrap()
         );
     }
 
@@ -263,7 +269,11 @@ mod tests {
         assert_eq!(
             // "YTpi" == "a:b" in base64
             "Basic YTpi",
-            ctx.request().headers().get("Authorization").unwrap()
+            ctx.request()
+                .expect("request is set")
+                .headers()
+                .get("Authorization")
+                .unwrap()
         );
 
         // Next, test the presence of a bearer token and absence of basic auth
@@ -281,7 +291,11 @@ mod tests {
         orchestrate_auth(&mut ctx, &cfg).await.expect("success");
         assert_eq!(
             "Bearer t",
-            ctx.request().headers().get("Authorization").unwrap()
+            ctx.request()
+                .expect("request is set")
+                .headers()
+                .get("Authorization")
+                .unwrap()
         );
     }
 

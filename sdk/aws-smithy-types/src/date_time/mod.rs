@@ -176,11 +176,23 @@ impl DateTime {
         self.seconds
     }
 
+    /// Set the seconds component of this `DateTime`.
+    pub fn set_seconds(&mut self, seconds: i64) -> &mut Self {
+        self.seconds = seconds;
+        self
+    }
+
     /// Returns the sub-second nanos component of the `DateTime`.
     ///
     /// _Note: this does not include the number of seconds since the epoch._
     pub fn subsec_nanos(&self) -> u32 {
         self.subsecond_nanos
+    }
+
+    /// Set the "sub-second" nanoseconds of this `DateTime`.
+    pub fn set_subsec_nanos(&mut self, subsec_nanos: u32) -> &mut Self {
+        self.subsecond_nanos = subsec_nanos;
+        self
     }
 
     /// Converts the `DateTime` to the number of milliseconds since the Unix epoch.

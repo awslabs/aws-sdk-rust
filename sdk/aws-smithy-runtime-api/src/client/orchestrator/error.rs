@@ -24,7 +24,8 @@ pub enum OrchestratorError<E: Debug> {
 
 impl<E: Debug> OrchestratorError<E> {
     /// Create a new `OrchestratorError` from a [`BoxError`].
-    pub fn other(err: BoxError) -> Self {
+    pub fn other(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        let err = err.into();
         Self::Other { err }
     }
 
@@ -36,6 +37,15 @@ impl<E: Debug> OrchestratorError<E> {
     /// Create a new `OrchestratorError` from an [`InterceptorError`].
     pub fn interceptor(err: InterceptorError) -> Self {
         Self::Interceptor { err }
+    }
+
+    /// Convert the `OrchestratorError` into `Some` operation specific error if it is one. Otherwise,
+    /// return `None`.
+    pub fn as_operation_error(&self) -> Option<&E> {
+        match self {
+            Self::Operation { err } => Some(err),
+            _ => None,
+        }
     }
 
     /// Convert the `OrchestratorError` into an [`SdkError`].
@@ -121,6 +131,6 @@ where
     E: Debug + std::error::Error + 'static,
 {
     fn from(err: aws_smithy_http::byte_stream::error::Error) -> Self {
-        Self::other(err.into())
+        Self::other(err)
     }
 }

@@ -45,13 +45,13 @@ macro_rules! declare_method {
     (&mut $name:ident, $doc:literal, $($tt:tt)+) => {
         #[doc=$doc]
         pub fn $name(&mut self) -> output!(&mut $($tt)+) {
-            self.inner.$name()
+            self.inner.$name().expect("wrapper type cannot be created unless this is set")
         }
     };
     (&$name:ident, $doc:literal, $($tt:tt)+) => {
         #[doc=$doc]
         pub fn $name(&self) -> output!(&$($tt)+) {
-            self.inner.$name()
+            self.inner.$name().expect("wrapper type cannot be created unless this is set")
         }
     };
 }

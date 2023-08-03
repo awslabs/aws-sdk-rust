@@ -61,12 +61,11 @@ mod tests {
         ctx.enter_before_transmit_phase();
         let mut ctx = Into::into(&mut ctx);
         let request_time = UNIX_EPOCH + Duration::from_secs(1624036048);
-        let interceptor = TestParamsSetterInterceptor::new({
-            let request_time = request_time.clone();
+        let interceptor = TestParamsSetterInterceptor::new(
             move |_: &mut BeforeTransmitInterceptorContextMut<'_>, cfg: &mut ConfigBag| {
                 cfg.set_request_time(request_time);
-            }
-        });
+            },
+        );
         interceptor
             .modify_before_signing(&mut ctx, &mut cfg)
             .unwrap();

@@ -5,6 +5,7 @@
 
 //! Module with client connectors useful for testing.
 
+use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
@@ -13,9 +14,9 @@ use aws_smithy_runtime_api::client::orchestrator::{
 };
 use http::header::{HeaderName, CONTENT_TYPE};
 use std::fmt::Debug;
-use std::future::ready;
 use std::ops::Deref;
 use std::sync::{Arc, Mutex};
+use std::time::Duration;
 use tokio::sync::oneshot;
 
 /// Test Connection to capture a single request
@@ -92,7 +93,44 @@ pub fn capture_request(
     )
 }
 
-type ConnectVec = Vec<(HttpRequest, HttpResponse)>;
+type ConnectionEvents = Vec<ConnectionEvent>;
+
+#[derive(Debug)]
+pub struct ConnectionEvent {
+    latency: Duration,
+    req: HttpRequest,
+    res: HttpResponse,
+}
+
+impl ConnectionEvent {
+    pub fn new(req: HttpRequest, res: HttpResponse) -> Self {
+        Self {
+            res,
+            req,
+            latency: Duration::from_secs(0),
+        }
+    }
+
+    /// Add simulated latency to this `ConnectionEvent`
+    pub fn with_latency(mut self, latency: Duration) -> Self {
+        self.latency = latency;
+        self
+    }
+
+    pub fn req(&self) -> &HttpRequest {
+        &self.req
+    }
+
+    pub fn res(&self) -> &HttpResponse {
+        &self.res
+    }
+}
+
+impl From<(HttpRequest, HttpResponse)> for ConnectionEvent {
+    fn from((req, res): (HttpRequest, HttpResponse)) -> Self {
+        Self::new(req, res)
+    }
+}
 
 #[derive(Debug)]
 pub struct ValidateRequest {
@@ -101,20 +139,23 @@ pub struct ValidateRequest {
 }
 
 impl ValidateRequest {
-    pub fn assert_matches(&self, ignore_headers: &[HeaderName]) {
+    pub fn assert_matches(&self, index: usize, ignore_headers: &[HeaderName]) {
         let (actual, expected) = (&self.actual, &self.expected);
-        assert_eq!(actual.uri(), expected.uri());
+        assert_eq!(
+            actual.uri(),
+            expected.uri(),
+            "Request #{index} - URI doesn't match expected value"
+        );
         for (name, value) in expected.headers() {
             if !ignore_headers.contains(name) {
                 let actual_header = actual
                     .headers()
                     .get(name)
-                    .unwrap_or_else(|| panic!("Header {:?} missing", name));
+                    .unwrap_or_else(|| panic!("Request #{index} - Header {name:?} is missing"));
                 assert_eq!(
                     actual_header.to_str().unwrap(),
                     value.to_str().unwrap(),
-                    "Header mismatch for {:?}",
-                    name
+                    "Request #{index} - Header {name:?} doesn't match expected value",
                 );
             }
         }
@@ -132,7 +173,11 @@ impl ValidateRequest {
         };
         match (actual_str, expected_str) {
             (Ok(actual), Ok(expected)) => assert_ok(validate_body(actual, expected, media_type)),
-            _ => assert_eq!(actual.body().bytes(), expected.body().bytes()),
+            _ => assert_eq!(
+                actual.body().bytes(),
+                expected.body().bytes(),
+                "Request #{index} - Body contents didn't match expected value"
+            ),
         };
     }
 }
@@ -142,28 +187,20 @@ impl ValidateRequest {
 /// A basic test connection. It will:
 /// - Respond to requests with a preloaded series of responses
 /// - Record requests for future examination
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct TestConnection {
-    data: Arc<Mutex<ConnectVec>>,
+    data: Arc<Mutex<ConnectionEvents>>,
     requests: Arc<Mutex<Vec<ValidateRequest>>>,
-}
-
-// Need a clone impl that ignores `B`
-impl Clone for TestConnection {
-    fn clone(&self) -> Self {
-        TestConnection {
-            data: self.data.clone(),
-            requests: self.requests.clone(),
-        }
-    }
+    sleep_impl: Arc<dyn AsyncSleep>,
 }
 
 impl TestConnection {
-    pub fn new(mut data: ConnectVec) -> Self {
+    pub fn new(mut data: ConnectionEvents, sleep_impl: Arc<dyn AsyncSleep>) -> Self {
         data.reverse();
         TestConnection {
             data: Arc::new(Mutex::new(data)),
             requests: Default::default(),
+            sleep_impl,
         }
     }
 
@@ -173,33 +210,40 @@ impl TestConnection {
 
     #[track_caller]
     pub fn assert_requests_match(&self, ignore_headers: &[HeaderName]) {
-        for req in self.requests().iter() {
-            req.assert_matches(ignore_headers)
+        for (i, req) in self.requests().iter().enumerate() {
+            req.assert_matches(i, ignore_headers)
         }
-        let remaining_requests = self.data.lock().unwrap().len();
+        let remaining_requests = self.data.lock().unwrap();
+        let number_of_remaining_requests = remaining_requests.len();
         let actual_requests = self.requests().len();
-        assert_eq!(
-            remaining_requests, 0,
-            "Expected {} additional requests ({} were made)",
-            remaining_requests, actual_requests
+        assert!(
+            remaining_requests.is_empty(),
+            "Expected {number_of_remaining_requests} additional requests (only {actual_requests} sent)",
         );
     }
 }
 
 impl Connection for TestConnection {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
-        // TODO(orchestrator) Validate request
-
-        let res = if let Some((expected, resp)) = self.data.lock().unwrap().pop() {
+        // TODO(enableNewSmithyRuntime) Validate request
+        let (res, simulated_latency) = if let Some(event) = self.data.lock().unwrap().pop() {
             self.requests.lock().unwrap().push(ValidateRequest {
-                expected,
+                expected: event.req,
                 actual: request,
             });
-            Ok(resp.map(SdkBody::from))
+
+            (Ok(event.res.map(SdkBody::from)), event.latency)
         } else {
-            Err(ConnectorError::other("No more data".into(), None).into())
+            (
+                Err(ConnectorError::other("No more data".into(), None).into()),
+                Duration::from_secs(0),
+            )
         };
 
-        Box::pin(ready(res))
+        let sleep = self.sleep_impl.sleep(simulated_latency);
+        Box::pin(async move {
+            sleep.await;
+            res
+        })
     }
 }

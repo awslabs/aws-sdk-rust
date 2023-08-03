@@ -15,6 +15,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 [features]
 default = []
 http-auth = ["dep:zeroize"]
+test-util = []
 
 [dependencies]
 bytes = "1"

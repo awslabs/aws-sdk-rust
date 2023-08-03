@@ -106,6 +106,17 @@ pub struct TypeErasedBox {
     >,
 }
 
+#[cfg(feature = "test-util")]
+impl TypeErasedBox {
+    /// Often, when testing the orchestrator or its components, it's necessary to provide a
+    /// `TypeErasedBox` to serve as an `Input` for `invoke`. In cases where the type won't actually
+    /// be accessed during testing, use this method to generate a `TypeErasedBox` that makes it
+    /// clear that "for the purpose of this test, the `Input` doesn't matter."
+    pub fn doesnt_matter() -> Self {
+        Self::new("doesn't matter")
+    }
+}
+
 impl fmt::Debug for TypeErasedBox {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("TypeErasedBox:")?;
@@ -117,7 +128,7 @@ impl TypeErasedBox {
     /// Create a new `TypeErasedBox` from `value` of type `T`
     pub fn new<T: Send + Sync + fmt::Debug + 'static>(value: T) -> Self {
         let debug = |value: &Box<dyn Any + Send + Sync>, f: &mut fmt::Formatter<'_>| {
-            fmt::Debug::fmt(value.downcast_ref::<T>().expect("typechecked"), f)
+            fmt::Debug::fmt(value.downcast_ref::<T>().expect("type-checked"), f)
         };
         Self {
             field: Box::new(value),

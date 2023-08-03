@@ -32,4 +32,4 @@ pub mod runtime_plugin;
 pub mod identity;
 
 /// Interceptors for Smithy clients.
-pub mod interceptor;
+pub mod interceptors;

@@ -112,11 +112,12 @@ mod tests {
     use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
     use aws_smithy_types::config_bag::ConfigBag;
     use aws_smithy_types::error::display::DisplayErrorContext;
-    use aws_smithy_types::type_erasure::TypedBox;
+    use aws_smithy_types::type_erasure::TypeErasedBox;
 
     fn expect_header<'a>(context: &'a InterceptorContext, header_name: &str) -> &'a str {
         context
             .request()
+            .expect("request is set")
             .headers()
             .get(header_name)
             .unwrap()
@@ -125,7 +126,7 @@ mod tests {
     }
 
     fn context() -> InterceptorContext {
-        let mut context = InterceptorContext::new(TypedBox::new("doesntmatter").erase());
+        let mut context = InterceptorContext::new(TypeErasedBox::doesnt_matter());
         context.enter_serialization_phase();
         context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
         let _ = context.take_input();

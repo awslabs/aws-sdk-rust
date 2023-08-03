@@ -10,16 +10,17 @@ use crate::client::timeout::{MaybeTimeout, ProvideMaybeTimeoutConfig, TimeoutKin
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::byte_stream::ByteStream;
 use aws_smithy_http::result::SdkError;
-use aws_smithy_runtime_api::client::interceptors::context::{Error, Input, Output};
+use aws_smithy_runtime_api::client::interceptors::context::{Error, Input, Output, RewindResult};
 use aws_smithy_runtime_api::client::interceptors::{InterceptorContext, Interceptors};
 use aws_smithy_runtime_api::client::orchestrator::{
-    BoxError, ConfigBagAccessors, HttpResponse, LoadedRequestBody,
+    BoxError, ConfigBagAccessors, HttpResponse, LoadedRequestBody, OrchestratorError,
 };
+use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
 use aws_smithy_runtime_api::client::retries::ShouldAttempt;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins;
 use aws_smithy_types::config_bag::ConfigBag;
 use std::mem;
-use tracing::{debug_span, Instrument};
+use tracing::{debug, debug_span, instrument, trace, Instrument};
 
 mod auth;
 /// Defines types that implement a trait for endpoint resolution
@@ -29,6 +30,7 @@ pub mod interceptors;
 
 macro_rules! halt {
     ([$ctx:ident] => $err:expr) => {{
+        trace!("encountered orchestrator error, continuing");
         $ctx.fail($err.into());
         return;
     }};
@@ -46,6 +48,7 @@ macro_rules! halt_on_err {
 macro_rules! continue_on_err {
     ([$ctx:ident] => $expr:expr) => {
         if let Err(err) = $expr {
+            trace!("encountered orchestrator error, continuing");
             $ctx.fail(err.into());
         }
     };
@@ -82,6 +85,7 @@ pub async fn invoke(
 /// Apply configuration is responsible for apply runtime plugins to the config bag, as well as running
 /// `read_before_execution` interceptors. If a failure occurs due to config construction, `invoke`
 /// will raise it to the user. If an interceptor fails, then `invoke`
+#[instrument(skip_all)]
 fn apply_configuration(
     ctx: &mut InterceptorContext,
     cfg: &mut ConfigBag,
@@ -97,6 +101,7 @@ fn apply_configuration(
     Ok(())
 }
 
+#[instrument(skip_all)]
 async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors: &Interceptors) {
     // Before serialization
     halt_on_err!([ctx] => interceptors.read_before_serialization(ctx, cfg));
@@ -114,9 +119,10 @@ async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors:
     // Load the request body into memory if configured to do so
     if let LoadedRequestBody::Requested = cfg.loaded_request_body() {
         let mut body = SdkBody::taken();
-        mem::swap(&mut body, ctx.request_mut().body_mut());
+        let req = ctx.request_mut().expect("request exists");
+        mem::swap(&mut body, req.body_mut());
         let loaded_body = halt_on_err!([ctx] => ByteStream::new(body).collect().await).into_bytes();
-        *ctx.request_mut().body_mut() = SdkBody::from(loaded_body.clone());
+        *req.body_mut() = SdkBody::from(loaded_body.clone());
         cfg.set_loaded_request_body(LoadedRequestBody::Loaded(loaded_body));
     }
 
@@ -128,10 +134,10 @@ async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors:
     let retry_strategy = cfg.retry_strategy();
     match retry_strategy.should_attempt_initial_request(cfg) {
         // Yes, let's make a request
-        Ok(ShouldAttempt::Yes) => { /* Keep going */ }
+        Ok(ShouldAttempt::Yes) => trace!("retry strategy has OKed initial request"),
         // No, this request shouldn't be sent
         Ok(ShouldAttempt::No) => {
-            let err: BoxError = "The retry strategy indicates that an initial request shouldn't be made, but it did specify why.".into();
+            let err: BoxError = "The retry strategy indicates that an initial request shouldn't be made, but it didn't specify why.".into();
             halt!([ctx] => err);
         }
         // No, we shouldn't make a request because...
@@ -141,16 +147,36 @@ async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors:
         }
     }
 
-    loop {
+    // Save a request checkpoint before we make the request. This will allow us to "rewind"
+    // the request in the case of retry attempts.
+    ctx.save_checkpoint();
+    for i in 0usize.. {
+        trace!("beginning attempt #{i}");
+        // Break from the loop if we can't rewind the request's state. This will always succeed the
+        // first time, but will fail on subsequent iterations if the request body wasn't retryable.
+        match ctx.rewind(cfg) {
+            r @ RewindResult::Impossible => {
+                debug!("{r}");
+                break;
+            }
+            r @ RewindResult::Occurred => debug!("{r}"),
+            r @ RewindResult::Unnecessary => debug!("{r}"),
+        }
+        // Track which attempt we're currently on.
+        cfg.put::<RequestAttempts>(i.into());
         let attempt_timeout_config = cfg.maybe_timeout_config(TimeoutKind::OperationAttempt);
-        async {
+        let maybe_timeout = async {
             try_attempt(ctx, cfg, interceptors).await;
             finally_attempt(ctx, cfg, interceptors).await;
             Result::<_, SdkError<Error, HttpResponse>>::Ok(())
         }
         .maybe_timeout_with_config(attempt_timeout_config)
         .await
-        .expect("These are infallible; The retry strategy will decide whether to stop or not.");
+        .map_err(OrchestratorError::other);
+
+        // We continue when encountering a timeout error. The retry classifier will decide what to do with it.
+        continue_on_err!([ctx] => maybe_timeout);
+
         let retry_strategy = cfg.retry_strategy();
         let should_attempt = halt_on_err!([ctx] => retry_strategy.should_attempt_retry(ctx, cfg));
         match should_attempt {
@@ -158,16 +184,21 @@ async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors:
             ShouldAttempt::Yes => continue,
             // No, this request shouldn't be retried
             ShouldAttempt::No => {
+                trace!("this error is not retryable, exiting attempt loop");
                 break;
             }
-            ShouldAttempt::YesAfterDelay(_delay) => {
-                // TODO(enableNewSmithyRuntime): implement retries with explicit delay
-                todo!("implement retries with an explicit delay.")
+            ShouldAttempt::YesAfterDelay(delay) => {
+                let sleep_impl = halt_on_err!([ctx] => cfg.sleep_impl().ok_or(OrchestratorError::other(
+                    "The retry strategy requested a delay before sending the next request, but no 'async sleep' implementation was set."
+                )));
+                sleep_impl.sleep(delay).await;
+                continue;
             }
         }
     }
 }
 
+#[instrument(skip_all)]
 async fn try_attempt(
     ctx: &mut InterceptorContext,
     cfg: &mut ConfigBag,
@@ -200,7 +231,9 @@ async fn try_attempt(
 
     ctx.enter_deserialization_phase();
     let output_or_error = async {
-        let response = ctx.response_mut();
+        let response = ctx
+            .response_mut()
+            .ok_or("No response was present in the InterceptorContext")?;
         let response_deserializer = cfg.response_deserializer();
         match response_deserializer.deserialize_streaming(response) {
             Some(output_or_error) => Ok(output_or_error),
@@ -218,6 +251,7 @@ async fn try_attempt(
     halt_on_err!([ctx] => interceptors.read_after_deserialization(ctx, cfg));
 }
 
+#[instrument(skip_all)]
 async fn finally_attempt(
     ctx: &mut InterceptorContext,
     cfg: &mut ConfigBag,
@@ -227,6 +261,7 @@ async fn finally_attempt(
     continue_on_err!([ctx] => interceptors.read_after_attempt(ctx, cfg));
 }
 
+#[instrument(skip_all)]
 async fn finally_op(
     ctx: &mut InterceptorContext,
     cfg: &mut ConfigBag,
