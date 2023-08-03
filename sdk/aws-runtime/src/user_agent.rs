@@ -49,23 +49,6 @@ impl From<InvalidHeaderValue> for UserAgentInterceptorError {
     }
 }
 
-/// Config marker that disables the user agent interceptor.
-#[doc(hidden)]
-#[derive(Clone, Copy, Debug, Eq, PartialEq)]
-pub struct DisableUserAgentInterceptor {
-    why: &'static str,
-}
-
-impl DisableUserAgentInterceptor {
-    /// Creates a new `DisableUserAgentInterceptor`.
-    ///
-    /// Takes a human readable string for the `Debug` impl to state why it is being disabled.
-    /// This is to assist with debugging issues with requests.
-    pub fn new(why: &'static str) -> Self {
-        Self { why }
-    }
-}
-
 /// Generates and attaches the AWS SDK's user agent to a HTTP request
 #[non_exhaustive]
 #[derive(Debug, Default)]

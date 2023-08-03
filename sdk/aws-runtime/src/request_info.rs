@@ -20,23 +20,6 @@ use std::time::{Duration, SystemTime};
 #[allow(clippy::declare_interior_mutable_const)] // we will never mutate this
 const AMZ_SDK_REQUEST: HeaderName = HeaderName::from_static("amz-sdk-request");
 
-/// Config marker that disables the invocation ID interceptor.
-#[doc(hidden)]
-#[derive(Clone, Copy, Debug, Eq, PartialEq)]
-pub struct DisableRequestInfoInterceptor {
-    why: &'static str,
-}
-
-impl DisableRequestInfoInterceptor {
-    /// Creates a new `DisableRequestInfoInterceptor`.
-    ///
-    /// Takes a human readable string for the `Debug` impl to state why it is being disabled.
-    /// This is to assist with debugging issues with requests.
-    pub fn new(why: &'static str) -> Self {
-        Self { why }
-    }
-}
-
 /// Generates and attaches a request header that communicates request-related metadata.
 /// Examples include:
 ///

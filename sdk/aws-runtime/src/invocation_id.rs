@@ -18,23 +18,6 @@ pub use test_util::{NoInvocationIdGenerator, PredefinedInvocationIdGenerator};
 #[allow(clippy::declare_interior_mutable_const)] // we will never mutate this
 const AMZ_SDK_INVOCATION_ID: HeaderName = HeaderName::from_static("amz-sdk-invocation-id");
 
-/// Config marker that disables the invocation ID interceptor.
-#[doc(hidden)]
-#[derive(Clone, Copy, Debug, Eq, PartialEq)]
-pub struct DisableInvocationIdInterceptor {
-    why: &'static str,
-}
-
-impl DisableInvocationIdInterceptor {
-    /// Creates a new `DisableInvocationIdInterceptor`.
-    ///
-    /// Takes a human readable string for the `Debug` impl to state why it is being disabled.
-    /// This is to assist with debugging issues with requests.
-    pub fn new(why: &'static str) -> Self {
-        Self { why }
-    }
-}
-
 /// A generator for returning new invocation IDs on demand.
 pub trait InvocationIdGenerator: Debug + Send + Sync {
     /// Call this function to receive a new [`InvocationId`] or an error explaining why one couldn't
