@@ -63,6 +63,7 @@
 
 use crate::provider_config::ProviderConfig;
 use crate::sts;
+use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_sdk_sts::config::Region;
 use aws_sdk_sts::middleware::DefaultMiddleware;
@@ -235,6 +236,7 @@ async fn load_credentials(
     })?;
     let conf = aws_sdk_sts::Config::builder()
         .region(region.clone())
+        .credentials_cache(CredentialsCache::no_caching())
         .build();
 
     let operation = AssumeRoleWithWebIdentityInput::builder()

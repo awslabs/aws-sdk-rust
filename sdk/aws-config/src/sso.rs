@@ -14,6 +14,7 @@ use crate::fs_util::{home_dir, Os};
 use crate::json_credentials::{json_parse_loop, InvalidJsonCredentials};
 use crate::provider_config::ProviderConfig;
 
+use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_credential_types::Credentials;
 use aws_sdk_sso::middleware::DefaultMiddleware as SsoMiddleware;
@@ -211,6 +212,7 @@ async fn load_sso_credentials(
         .map_err(CredentialsError::provider_error)?;
     let config = aws_sdk_sso::Config::builder()
         .region(sso_config.region.clone())
+        .credentials_cache(CredentialsCache::no_caching())
         .build();
     let operation = GetRoleCredentialsInput::builder()
         .role_name(&sso_config.role_name)
