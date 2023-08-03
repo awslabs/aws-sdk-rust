@@ -112,7 +112,7 @@ where
     O: ParseHttpResponse<Output = Result<T, E>>,
 {
     if let Some(parsed_response) =
-        debug_span!("parse_unloaded").in_scope(&mut || handler.parse_unloaded(&mut response))
+        debug_span!("parse_unloaded").in_scope(|| handler.parse_unloaded(&mut response))
     {
         trace!(response = ?response, "read HTTP headers for streaming response");
         return sdk_result(parsed_response, response);

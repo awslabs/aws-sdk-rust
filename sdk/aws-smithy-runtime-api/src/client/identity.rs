@@ -121,7 +121,7 @@ impl Identity {
     }
 }
 
-impl fmt::Debug for Identity {
+impl Debug for Identity {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("Identity")
             .field("data", (self.data_debug)(&self.data))
@@ -133,6 +133,7 @@ impl fmt::Debug for Identity {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use aws_smithy_async::time::{SystemTimeSource, TimeSource};
 
     #[test]
     fn check_send_sync() {
@@ -148,7 +149,8 @@ mod tests {
             last: String,
         }
 
-        let expiration = SystemTime::now();
+        let ts = SystemTimeSource::new();
+        let expiration = ts.now();
         let identity = Identity::new(
             MyIdentityData {
                 first: "foo".into(),

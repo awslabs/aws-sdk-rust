@@ -8,7 +8,7 @@ description = "Example usage of the SecretManager service"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
+aws-config= { version = "0.56.0", path = "../../sdk/aws-config" }
 aws-sdk-secretsmanager= { version = "0.29.0", path = "../../sdk/secretsmanager" }
 
 [dependencies.tokio]

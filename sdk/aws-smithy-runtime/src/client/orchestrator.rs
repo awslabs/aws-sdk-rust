@@ -478,7 +478,7 @@ mod tests {
                 .status(StatusCode::OK)
                 .body(SdkBody::empty())
                 .map_err(|err| OrchestratorError::other(Box::new(err)))
-                .map(|res| Output::erase(res)),
+                .map(Output::erase),
         )
     }
 

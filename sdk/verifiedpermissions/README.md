@@ -31,7 +31,7 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.0.0-smithy-rs-head"
+aws-config = "0.56.0"
 aws-sdk-verifiedpermissions = "0.1.0"
 tokio = { version = "1", features = ["full"] }
 ```

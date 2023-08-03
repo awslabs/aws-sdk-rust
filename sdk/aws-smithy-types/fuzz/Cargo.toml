@@ -44,7 +44,7 @@ libfuzzer-sys = "0.4"
 
 [dependencies.aws-smithy-types]
 path = ".."
-version = "0.0.0-smithy-rs-head"
+version = "0.56.0"
 
 [workspace]
 members = ["."]

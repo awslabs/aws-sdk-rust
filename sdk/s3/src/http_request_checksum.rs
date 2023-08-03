@@ -222,11 +222,8 @@ mod tests {
         let mut body = request.body().try_clone().expect("body is retryable");
 
         let mut body_data = BytesMut::new();
-        loop {
-            match body.data().await {
-                Some(data) => body_data.extend_from_slice(&data.unwrap()),
-                None => break,
-            }
+        while let Some(data) = body.data().await {
+            body_data.extend_from_slice(&data.unwrap())
         }
         let body = std::str::from_utf8(&body_data).unwrap();
         assert_eq!(
@@ -262,11 +259,8 @@ mod tests {
         let mut body = request.body().try_clone().expect("body is retryable");
 
         let mut body_data = BytesMut::new();
-        loop {
-            match body.data().await {
-                Some(data) => body_data.extend_from_slice(&data.unwrap()),
-                None => break,
-            }
+        while let Some(data) = body.data().await {
+            body_data.extend_from_slice(&data.unwrap())
         }
         let body = std::str::from_utf8(&body_data).unwrap();
         let expected_checksum = base64::encode(&crc32c_checksum);

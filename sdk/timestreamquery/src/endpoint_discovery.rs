@@ -150,11 +150,11 @@ mod test {
     use crate::endpoint_discovery::create_cache;
     use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
     use aws_smithy_async::test_util::controlled_time_and_sleep;
-    use aws_smithy_async::time::{SharedTimeSource, SystemTimeSource};
+    use aws_smithy_async::time::{SharedTimeSource, SystemTimeSource, TimeSource};
     use aws_smithy_types::endpoint::Endpoint;
     use std::sync::atomic::{AtomicUsize, Ordering};
     use std::sync::Arc;
-    use std::time::{Duration, SystemTime, UNIX_EPOCH};
+    use std::time::{Duration, UNIX_EPOCH};
     use tokio::time::timeout;
 
     fn check_send_v<T: Send>(t: T) -> T {
@@ -165,7 +165,7 @@ mod test {
     #[allow(unused_must_use)]
     async fn check_traits() {
         let (cache, reloader) = create_cache(
-            || async { Ok((Endpoint::builder().url("http://foo.com").build(), SystemTime::now())) },
+            || async { Ok((Endpoint::builder().url("http://foo.com").build(), SystemTimeSource::new().now())) },
             SharedAsyncSleep::new(TokioSleep::new()),
             SharedTimeSource::new(SystemTimeSource::new()),
         )
