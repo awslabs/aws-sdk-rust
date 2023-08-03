@@ -70,7 +70,7 @@ path = "../aws-types"
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.hyper]
-version = "0.14.25"
+version = "0.14.26"
 default-features = false
 
 [dependencies.time]
@@ -137,5 +137,5 @@ features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.hyper-rustls]
-version = "0.23.0"
+version = "0.24"
 features = ["webpki-tokio", "http2", "http1"]

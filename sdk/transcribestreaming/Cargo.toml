@@ -71,7 +71,7 @@ version = "1.0.0"
 version = "0.2.9"
 
 [dependencies.hyper]
-version = "0.14.12"
+version = "0.14.26"
 features = ["stream"]
 
 [dependencies.regex]

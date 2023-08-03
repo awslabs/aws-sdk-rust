@@ -41,7 +41,7 @@ version = "0.0.0-smithy-rs-head"
 async-trait = "0.1.50"
 bytes-utils = "0.1.2"
 env_logger = "0.9"
-proptest = "1"
+proptest = "1.2"
 serde_json = "1"
 
 [dev-dependencies.aws-credential-types]
@@ -67,7 +67,7 @@ version = "1.23.1"
 features = ["macros", "rt", "rt-multi-thread", "test-util", "time"]
 
 [dev-dependencies.tracing-subscriber]
-version = "0.3.15"
+version = "0.3.17"
 features = ["env-filter"]
 
 [dev-dependencies.serde]

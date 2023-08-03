@@ -40,13 +40,13 @@ path = "../aws-smithy-http"
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.hyper-rustls]
-version = "0.23.0"
+version = "0.24"
 optional = true
 features = ["rustls-native-certs", "http2", "webpki-roots"]
 
 [dev-dependencies]
 http = "0.2.4"
-tracing-test = "0.2.1"
+tracing-test = "0.2.4"
 
 [dev-dependencies.futures-util]
 version = "0.3.16"

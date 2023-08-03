@@ -255,12 +255,18 @@ impl SigV4HttpRequestSigner {
             .get::<SigV4OperationSigningConfig>()
             .ok_or(SigV4SigningError::MissingOperationSigningConfig)?;
 
+        let signing_region = config_bag.get::<SigningRegion>();
+        let signing_service = config_bag.get::<SigningService>();
+
         let EndpointAuthSchemeConfig {
             signing_region_override,
             signing_service_override,
         } = Self::extract_endpoint_auth_scheme_config(auth_scheme_endpoint_config)?;
 
-        match (signing_region_override, signing_service_override) {
+        match (
+            signing_region_override.or_else(|| signing_region.cloned()),
+            signing_service_override.or_else(|| signing_service.cloned()),
+        ) {
             (None, None) => Ok(Cow::Borrowed(operation_config)),
             (region, service) => {
                 let mut operation_config = operation_config.clone();

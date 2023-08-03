@@ -45,7 +45,7 @@ path = "../aws-types"
 version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies]
-tracing-test = "0.2.1"
+tracing-test = "0.2.4"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"

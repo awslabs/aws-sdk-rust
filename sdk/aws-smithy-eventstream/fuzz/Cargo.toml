@@ -40,10 +40,10 @@ edition = "2021"
 cargo-fuzz = true
 
 [dependencies]
-derive_arbitrary = "=1.1.6"
 arbitrary = "=1.1.3"
 bytes = "1"
 crc32fast = "1"
+derive_arbitrary = "=1.1.6"
 libfuzzer-sys = "0.4"
 
 [dependencies.aws-smithy-types]
