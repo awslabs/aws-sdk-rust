@@ -855,6 +855,13 @@ mod test {
         layer_1.unset::<TestStr>();
         assert!(layer_1.try_clone().unwrap().load::<TestStr>().is_none());
 
+        // It is cloneable multiple times in succession
+        let _ = layer_1
+            .try_clone()
+            .expect("clone 1")
+            .try_clone()
+            .expect("clone 2");
+
         #[derive(Clone, Debug)]
         struct Rope(String);
         impl Storable for Rope {

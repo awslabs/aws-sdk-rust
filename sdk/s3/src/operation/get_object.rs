@@ -188,7 +188,9 @@ impl GetObjectInput {
         {
             // Change signature type to query params and wire up presigning config
             let mut props = request.properties_mut();
-            props.insert(::aws_smithy_async::time::SharedTimeSource::new(presigning_config.start_time()));
+            props.insert(::aws_smithy_async::time::SharedTimeSource::new(
+                ::aws_smithy_async::time::StaticTimeSource::new(presigning_config.start_time()),
+            ));
             props.insert(::aws_sigv4::http_request::SignableBody::UnsignedPayload);
             let config = props
                 .get_mut::<::aws_sig_auth::signer::OperationSigningConfig>()

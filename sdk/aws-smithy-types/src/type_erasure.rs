@@ -122,7 +122,13 @@ impl TypeErasedBox {
 
 impl fmt::Debug for TypeErasedBox {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.write_str("TypeErasedBox:")?;
+        f.write_str("TypeErasedBox[")?;
+        if self.clone.is_some() {
+            f.write_str("Clone")?;
+        } else {
+            f.write_str("!Clone")?;
+        }
+        f.write_str("]:")?;
         (self.debug)(&self.field, f)
     }
 }
@@ -145,7 +151,7 @@ impl TypeErasedBox {
             fmt::Debug::fmt(value.downcast_ref::<T>().expect("type-checked"), f)
         };
         let clone = |value: &Box<dyn Any + Send + Sync>| {
-            TypeErasedBox::new(value.downcast_ref::<T>().expect("typechecked").clone())
+            TypeErasedBox::new_with_clone(value.downcast_ref::<T>().expect("typechecked").clone())
         };
         Self {
             field: Box::new(value),
@@ -292,8 +298,11 @@ mod tests {
             .0 = "3";
 
         let bar_erased = bar.erase();
-        assert_eq!("TypeErasedBox:Foo(\"3\")", format!("{foo_erased:?}"));
-        assert_eq!("TypeErasedBox:Bar(2)", format!("{bar_erased:?}"));
+        assert_eq!(
+            "TypeErasedBox[!Clone]:Foo(\"3\")",
+            format!("{foo_erased:?}")
+        );
+        assert_eq!("TypeErasedBox[!Clone]:Bar(2)", format!("{bar_erased:?}"));
 
         let bar_erased = TypedBox::<Foo>::assume_from(bar_erased).expect_err("it's not a Foo");
         let mut bar = TypedBox::<Bar>::assume_from(bar_erased).expect("it's a Bar");

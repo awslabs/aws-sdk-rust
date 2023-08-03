@@ -31,7 +31,6 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-client]

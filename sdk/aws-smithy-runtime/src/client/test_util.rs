@@ -4,5 +4,4 @@
  */
 
 pub mod deserializer;
-pub mod interceptors;
 pub mod serializer;

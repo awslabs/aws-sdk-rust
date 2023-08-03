@@ -7,7 +7,6 @@ use aws_credential_types::provider::{self, error::CredentialsError};
 use aws_credential_types::Credentials as AwsCredentials;
 use aws_sdk_sts::types::Credentials as StsCredentials;
 
-use aws_smithy_async::time::TimeSource;
 use std::convert::TryFrom;
 use std::time::{SystemTime, UNIX_EPOCH};
 
@@ -47,6 +46,6 @@ pub(crate) fn into_credentials(
 /// provide a name for the session, the provider will choose a name composed of a base + a timestamp,
 /// e.g. `profile-file-provider-123456789`
 pub(crate) fn default_session_name(base: &str, ts: SystemTime) -> String {
-    let now = ts.now().duration_since(UNIX_EPOCH).expect("post epoch");
+    let now = ts.duration_since(UNIX_EPOCH).expect("post epoch");
     format!("{}-{}", base, now.as_millis())
 }

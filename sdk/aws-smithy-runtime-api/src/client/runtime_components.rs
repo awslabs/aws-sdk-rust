@@ -134,7 +134,7 @@ macro_rules! declare_runtime_components {
             $($field_name: runtime_component_field_type!($outer_type $inner_type $($option)?),)+
         }
 
-        #[derive(Clone, Debug, Default)]
+        #[derive(Clone, Debug)]
         pub struct $builder_name {
             builder_name: &'static str,
             $($field_name: $outer_type<Tracked<$inner_type>>,)+
@@ -200,8 +200,8 @@ declare_runtime_components! {
 
 impl RuntimeComponents {
     /// Returns a builder for runtime components.
-    pub fn builder() -> RuntimeComponentsBuilder {
-        Default::default()
+    pub fn builder(name: &'static str) -> RuntimeComponentsBuilder {
+        RuntimeComponentsBuilder::new(name)
     }
 
     /// Returns the auth option resolver.

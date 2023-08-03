@@ -91,6 +91,7 @@ impl ProviderConfig {
     /// Unlike [`ProviderConfig::empty`] where `env` and `fs` will use their non-mocked implementations,
     /// this method will use an empty mock environment and an empty mock file system.
     pub fn no_configuration() -> Self {
+        use aws_smithy_async::time::StaticTimeSource;
         use std::collections::HashMap;
         use std::time::UNIX_EPOCH;
         let fs = Fs::from_raw_map(HashMap::new());
@@ -100,7 +101,7 @@ impl ProviderConfig {
             profile_files: ProfileFiles::default(),
             env,
             fs,
-            time_source: SharedTimeSource::new(UNIX_EPOCH),
+            time_source: SharedTimeSource::new(StaticTimeSource::new(UNIX_EPOCH)),
             connector: HttpConnector::Prebuilt(None),
             sleep: None,
             region: None,

@@ -31,7 +31,6 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-client]
@@ -88,6 +87,11 @@ version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
+features = ["test-util"]
+version = "0.0.0-smithy-rs-head"
+
+[dev-dependencies.aws-smithy-async]
+path = "../aws-smithy-async"
 features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
