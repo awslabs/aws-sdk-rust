@@ -9,9 +9,10 @@ use aws_smithy_http::endpoint::{
     SharedEndpointResolver,
 };
 use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::{
-    ConfigBagAccessors, EndpointResolver, EndpointResolverParams, HttpRequest,
+    EndpointResolver, EndpointResolverParams, HttpRequest,
 };
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;

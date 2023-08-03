@@ -10,7 +10,7 @@
 #![allow(dead_code)]
 
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::orchestrator::ConfigBagAccessors;
+use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_runtime_api::{builder, builder_methods, builder_struct};
 use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer, Storable, StoreReplace};
@@ -257,7 +257,7 @@ mod tests {
     use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::test_util::instant_time_and_sleep;
     use aws_smithy_async::time::SharedTimeSource;
-    use aws_smithy_runtime_api::client::orchestrator::ConfigBagAccessors;
+    use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
     use aws_smithy_types::config_bag::ConfigBag;
     use std::time::{Duration, SystemTime};
 

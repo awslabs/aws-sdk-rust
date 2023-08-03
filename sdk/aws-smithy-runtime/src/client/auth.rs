@@ -3,5 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#[cfg(feature = "no-auth")]
+pub mod no_auth;
+
 #[cfg(feature = "http-auth")]
 pub mod http;

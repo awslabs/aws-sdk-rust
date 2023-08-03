@@ -15,12 +15,13 @@ use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::byte_stream::ByteStream;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::interceptors::context::{
     Error, Input, InterceptorContext, Output, RewindResult,
 };
 use aws_smithy_runtime_api::client::interceptors::Interceptors;
 use aws_smithy_runtime_api::client::orchestrator::{
-    ConfigBagAccessors, HttpResponse, LoadedRequestBody, OrchestratorError, RequestSerializer,
+    HttpResponse, LoadedRequestBody, OrchestratorError, RequestSerializer,
 };
 use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
 use aws_smithy_runtime_api::client::retries::ShouldAttempt;
@@ -327,11 +328,11 @@ async fn finally_op(
 #[cfg(all(test, feature = "test-util", feature = "anonymous-auth"))]
 mod tests {
     use super::*;
+    use crate::client::auth::no_auth::NoAuthRuntimePlugin;
     use crate::client::orchestrator::endpoints::{
         StaticUriEndpointResolver, StaticUriEndpointResolverParams,
     };
     use crate::client::retries::strategy::NeverRetryStrategy;
-    use crate::client::runtime_plugin::anonymous_auth::AnonymousAuthRuntimePlugin;
     use crate::client::test_util::{
         connector::OkConnector, deserializer::CannedResponseDeserializer,
         serializer::CannedRequestSerializer,
@@ -449,7 +450,7 @@ mod tests {
             let runtime_plugins = RuntimePlugins::new()
                 .with_client_plugin(FailingInterceptorsClientRuntimePlugin)
                 .with_operation_plugin(TestOperationRuntimePlugin)
-                .with_operation_plugin(AnonymousAuthRuntimePlugin::new())
+                .with_operation_plugin(NoAuthRuntimePlugin::new())
                 .with_operation_plugin(FailingInterceptorsOperationRuntimePlugin);
             let actual = invoke(input, &runtime_plugins)
                 .await

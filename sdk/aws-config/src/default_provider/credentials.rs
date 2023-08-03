@@ -250,11 +250,14 @@ mod test {
                 .await
                 .unwrap()
                 .with_provider_config($provider_config_builder)
-                .$func(|conf| async {
-                    crate::default_provider::credentials::Builder::default()
-                        .configure(conf)
-                        .build()
-                        .await
+                .$func(|conf| {
+                    let conf = conf.clone();
+                    async move {
+                        crate::default_provider::credentials::Builder::default()
+                            .configure(conf)
+                            .build()
+                            .await
+                    }
                 })
                 .await
             }

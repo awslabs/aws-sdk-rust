@@ -12,7 +12,6 @@ pub use assume_role::{AssumeRoleProvider, AssumeRoleProviderBuilder};
 mod assume_role;
 
 use crate::connector::expect_connector;
-use aws_credential_types::cache::CredentialsCache;
 use aws_sdk_sts::config::Builder as StsConfigBuilder;
 use aws_smithy_types::retry::RetryConfig;
 
@@ -22,8 +21,7 @@ impl crate::provider_config::ProviderConfig {
             .http_connector(expect_connector(self.connector(&Default::default())))
             .retry_config(RetryConfig::standard())
             .region(self.region())
-            .time_source(self.time_source())
-            .credentials_cache(CredentialsCache::no_caching());
+            .time_source(self.time_source());
         builder.set_sleep_impl(self.sleep());
         builder
     }

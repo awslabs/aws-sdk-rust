@@ -63,6 +63,7 @@ impl DescribeHostsPaginator {
         // Move individual fields out of self for the borrow checker
         let builder = self.builder;
         let handle = self.handle;
+
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.

@@ -24,12 +24,31 @@ async fn assume_role_signed() {
     );
 }
 
+// TODO(enableNewSmithyRuntimeCleanup): Delete the middleware version of this test
+#[cfg(not(aws_sdk_orchestrator_mode))]
 #[tokio::test]
 async fn web_identity_unsigned() {
     let creds = Credentials::for_tests();
     let (server, request) = capture_request(None);
     let conf = aws_sdk_sts::Config::builder()
         .credentials_provider(creds)
+        .region(Region::new("us-east-1"))
+        .http_connector(server)
+        .build();
+    let client = aws_sdk_sts::Client::from_conf(conf);
+    let _ = client.assume_role_with_web_identity().send().await;
+    // web identity should be unsigned
+    assert_eq!(
+        request.expect_request().headers().get("AUTHORIZATION"),
+        None
+    );
+}
+
+#[cfg(aws_sdk_orchestrator_mode)]
+#[tokio::test]
+async fn web_identity_unsigned() {
+    let (server, request) = capture_request(None);
+    let conf = aws_sdk_sts::Config::builder()
         .region(Region::new("us-east-1"))
         .http_connector(server)
         .build();

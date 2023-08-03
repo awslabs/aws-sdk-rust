@@ -8,8 +8,8 @@ use crate::client::retries::strategy::standard::ReleaseResult::{
 };
 use crate::client::retries::token_bucket::TokenBucket;
 use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
-use aws_smithy_runtime_api::client::orchestrator::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
 use aws_smithy_runtime_api::client::retries::{
     ClassifyRetry, RetryReason, RetryStrategy, ShouldAttempt,
@@ -211,7 +211,11 @@ fn calculate_exponential_backoff(base: f64, initial_backoff: f64, retry_attempts
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aws_smithy_runtime_api::client::orchestrator::{ConfigBagAccessors, OrchestratorError};
+    use super::{calculate_exponential_backoff, ShouldAttempt, StandardRetryStrategy};
+    use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
+    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
+    use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
     use aws_smithy_runtime_api::client::retries::{
         AlwaysRetry, ClassifyRetry, RetryClassifiers, RetryReason, RetryStrategy,
     };

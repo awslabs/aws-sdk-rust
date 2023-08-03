@@ -13,7 +13,9 @@ use aws_smithy_runtime_api::client::auth::{
     AuthSchemeEndpointConfig, AuthSchemeId, HttpAuthScheme, HttpRequestSigner,
 };
 use aws_smithy_runtime_api::client::identity::http::{Login, Token};
-use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
+use aws_smithy_runtime_api::client::identity::{
+    Identity, IdentityResolvers, SharedIdentityResolver,
+};
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_types::base64::encode;
 use aws_smithy_types::config_bag::ConfigBag;
@@ -55,10 +57,10 @@ impl HttpAuthScheme for ApiKeyAuthScheme {
         HTTP_API_KEY_AUTH_SCHEME_ID
     }
 
-    fn identity_resolver<'a>(
+    fn identity_resolver(
         &self,
-        identity_resolvers: &'a IdentityResolvers,
-    ) -> Option<&'a dyn IdentityResolver> {
+        identity_resolvers: &IdentityResolvers,
+    ) -> Option<SharedIdentityResolver> {
         identity_resolvers.identity_resolver(self.scheme_id())
     }
 
@@ -125,10 +127,10 @@ impl HttpAuthScheme for BasicAuthScheme {
         HTTP_BASIC_AUTH_SCHEME_ID
     }
 
-    fn identity_resolver<'a>(
+    fn identity_resolver(
         &self,
-        identity_resolvers: &'a IdentityResolvers,
-    ) -> Option<&'a dyn IdentityResolver> {
+        identity_resolvers: &IdentityResolvers,
+    ) -> Option<SharedIdentityResolver> {
         identity_resolvers.identity_resolver(self.scheme_id())
     }
 
@@ -183,10 +185,10 @@ impl HttpAuthScheme for BearerAuthScheme {
         HTTP_BEARER_AUTH_SCHEME_ID
     }
 
-    fn identity_resolver<'a>(
+    fn identity_resolver(
         &self,
-        identity_resolvers: &'a IdentityResolvers,
-    ) -> Option<&'a dyn IdentityResolver> {
+        identity_resolvers: &IdentityResolvers,
+    ) -> Option<SharedIdentityResolver> {
         identity_resolvers.identity_resolver(self.scheme_id())
     }
 
@@ -239,10 +241,10 @@ impl HttpAuthScheme for DigestAuthScheme {
         HTTP_DIGEST_AUTH_SCHEME_ID
     }
 
-    fn identity_resolver<'a>(
+    fn identity_resolver(
         &self,
-        identity_resolvers: &'a IdentityResolvers,
-    ) -> Option<&'a dyn IdentityResolver> {
+        identity_resolvers: &IdentityResolvers,
+    ) -> Option<SharedIdentityResolver> {
         identity_resolvers.identity_resolver(self.scheme_id())
     }
 

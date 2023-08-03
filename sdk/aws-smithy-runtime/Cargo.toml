@@ -14,7 +14,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
 http-auth = ["aws-smithy-runtime-api/http-auth"]
-anonymous-auth = []
+no-auth = []
 test-util = ["dep:aws-smithy-protocol-test"]
 
 [dependencies]

@@ -12,8 +12,11 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
     AuthSchemeEndpointConfig, AuthSchemeId, HttpAuthScheme, HttpRequestSigner,
 };
-use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
-use aws_smithy_runtime_api::client::orchestrator::{ConfigBagAccessors, HttpRequest};
+use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
+use aws_smithy_runtime_api::client::identity::{
+    Identity, IdentityResolvers, SharedIdentityResolver,
+};
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::Document;
 use aws_types::region::{Region, SigningRegion};
@@ -94,10 +97,10 @@ impl HttpAuthScheme for SigV4HttpAuthScheme {
         SCHEME_ID
     }
 
-    fn identity_resolver<'a>(
+    fn identity_resolver(
         &self,
-        identity_resolvers: &'a IdentityResolvers,
-    ) -> Option<&'a dyn IdentityResolver> {
+        identity_resolvers: &IdentityResolvers,
+    ) -> Option<SharedIdentityResolver> {
         identity_resolvers.identity_resolver(self.scheme_id())
     }
 

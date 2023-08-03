@@ -171,6 +171,17 @@ mod loader {
     use crate::profile::profile_file::ProfileFiles;
     use crate::provider_config::ProviderConfig;
 
+    #[derive(Default, Debug)]
+    enum CredentialsProviderOption {
+        /// No provider was set by the user. We can set up the default credentials provider chain.
+        #[default]
+        NotSet,
+        /// The credentials provider was explicitly unset. Do not set up a default chain.
+        ExplicitlyUnset,
+        /// Use the given credentials provider.
+        Set(SharedCredentialsProvider),
+    }
+
     /// Load a cross-service [`SdkConfig`](aws_types::SdkConfig) from the environment
     ///
     /// This builder supports overriding individual components of the generated config. Overriding a component
@@ -181,7 +192,7 @@ mod loader {
     pub struct ConfigLoader {
         app_name: Option<AppName>,
         credentials_cache: Option<CredentialsCache>,
-        credentials_provider: Option<SharedCredentialsProvider>,
+        credentials_provider: CredentialsProviderOption,
         endpoint_url: Option<String>,
         region: Option<Box<dyn ProvideRegion>>,
         retry_config: Option<RetryConfig>,
@@ -348,7 +359,33 @@ mod loader {
             mut self,
             credentials_provider: impl ProvideCredentials + 'static,
         ) -> Self {
-            self.credentials_provider = Some(SharedCredentialsProvider::new(credentials_provider));
+            self.credentials_provider = CredentialsProviderOption::Set(
+                SharedCredentialsProvider::new(credentials_provider),
+            );
+            self
+        }
+
+        // TODO(enableNewSmithyRuntimeLaunch): Remove the doc hidden from this function
+        #[doc(hidden)]
+        /// Don't use credentials to sign requests.
+        ///
+        /// Turning off signing with credentials is necessary in some cases, such as using
+        /// anonymous auth for S3, calling operations in STS that don't require a signature,
+        /// or using token-based auth.
+        ///
+        /// # Examples
+        ///
+        /// Turn off credentials in order to call a service without signing:
+        /// ```no_run
+        /// # async fn create_config() {
+        /// let config = aws_config::from_env()
+        ///     .no_credentials()
+        ///     .load()
+        ///     .await;
+        /// # }
+        /// ```
+        pub fn no_credentials(mut self) -> Self {
+            self.credentials_provider = CredentialsProviderOption::ExplicitlyUnset;
             self
         }
 
@@ -570,13 +607,28 @@ mod loader {
                 .http_connector
                 .unwrap_or_else(|| HttpConnector::ConnectorFn(Arc::new(default_connector)));
 
-            let credentials_cache = self.credentials_cache.unwrap_or_else(|| {
-                let mut builder = CredentialsCache::lazy_builder().time_source(
-                    aws_credential_types::time_source::TimeSource::shared(conf.time_source()),
-                );
-                builder.set_sleep(conf.sleep());
-                builder.into_credentials_cache()
-            });
+            let credentials_provider = match self.credentials_provider {
+                CredentialsProviderOption::Set(provider) => Some(provider),
+                CredentialsProviderOption::NotSet => {
+                    let mut builder =
+                        credentials::DefaultCredentialsChain::builder().configure(conf.clone());
+                    builder.set_region(region.clone());
+                    Some(SharedCredentialsProvider::new(builder.build().await))
+                }
+                CredentialsProviderOption::ExplicitlyUnset => None,
+            };
+
+            let credentials_cache = if credentials_provider.is_some() {
+                Some(self.credentials_cache.unwrap_or_else(|| {
+                    let mut builder = CredentialsCache::lazy_builder().time_source(
+                        aws_credential_types::time_source::TimeSource::shared(conf.time_source()),
+                    );
+                    builder.set_sleep(conf.sleep());
+                    builder.into_credentials_cache()
+                }))
+            } else {
+                None
+            };
 
             let use_fips = if let Some(use_fips) = self.use_fips {
                 Some(use_fips)
@@ -590,26 +642,18 @@ mod loader {
                 use_dual_stack_provider(&conf).await
             };
 
-            let credentials_provider = if let Some(provider) = self.credentials_provider {
-                provider
-            } else {
-                let mut builder = credentials::DefaultCredentialsChain::builder().configure(conf);
-                builder.set_region(region.clone());
-                SharedCredentialsProvider::new(builder.build().await)
-            };
-
             let ts = self.time_source.unwrap_or_default();
 
             let mut builder = SdkConfig::builder()
                 .region(region)
                 .retry_config(retry_config)
                 .timeout_config(timeout_config)
-                .credentials_cache(credentials_cache)
-                .credentials_provider(credentials_provider)
                 .time_source(ts)
                 .http_connector(http_connector);
 
             builder.set_app_name(app_name);
+            builder.set_credentials_cache(credentials_cache);
+            builder.set_credentials_provider(credentials_provider);
             builder.set_sleep_impl(sleep_impl);
             builder.set_endpoint_url(self.endpoint_url);
             builder.set_use_fips(use_fips);
@@ -718,6 +762,14 @@ mod loader {
             let app_name = AppName::new("my-app-name").unwrap();
             let conf = base_conf().app_name(app_name.clone()).load().await;
             assert_eq!(Some(&app_name), conf.app_name());
+        }
+
+        #[cfg(aws_sdk_orchestrator_mode)]
+        #[tokio::test]
+        async fn disable_default_credentials() {
+            let config = from_env().no_credentials().load().await;
+            assert!(config.credentials_cache().is_none());
+            assert!(config.credentials_provider().is_none());
         }
     }
 }

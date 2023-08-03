@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::interceptors::context::{Error, Output};
 use aws_smithy_runtime_api::client::orchestrator::{
-    ConfigBagAccessors, DynResponseDeserializer, HttpResponse, OrchestratorError,
-    ResponseDeserializer,
+    DynResponseDeserializer, HttpResponse, OrchestratorError, ResponseDeserializer,
 };
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_types::config_bag::{FrozenLayer, Layer};
