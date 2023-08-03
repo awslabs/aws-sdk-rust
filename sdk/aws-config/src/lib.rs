@@ -620,9 +620,8 @@ mod loader {
 
             let credentials_cache = if credentials_provider.is_some() {
                 Some(self.credentials_cache.unwrap_or_else(|| {
-                    let mut builder = CredentialsCache::lazy_builder().time_source(
-                        aws_credential_types::time_source::TimeSource::shared(conf.time_source()),
-                    );
+                    let mut builder =
+                        CredentialsCache::lazy_builder().time_source(conf.time_source());
                     builder.set_sleep(conf.sleep());
                     builder.into_credentials_cache()
                 }))

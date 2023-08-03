@@ -35,11 +35,43 @@ impl ManualTimeSource {
             .unwrap()
             .as_secs_f64()
     }
+
+    /// Creates a new [`ManualTimeSource`]
+    pub fn new(start_time: SystemTime) -> ManualTimeSource {
+        Self {
+            start_time,
+            log: Default::default(),
+        }
+    }
+
+    /// Advances the time of this time source by `duration`.
+    pub fn advance(&self, duration: Duration) -> SystemTime {
+        let mut log = self.log.lock().unwrap();
+        log.push(duration);
+        self._now(&log)
+    }
+
+    fn _now(&self, log: &[Duration]) -> SystemTime {
+        self.start_time + log.iter().sum::<Duration>()
+    }
+
+    /// Sets the `time` of this manual time source.
+    ///
+    /// # Panics
+    /// This function panics if `time` < `now()`
+    pub fn set_time(&self, time: SystemTime) {
+        let mut log = self.log.lock().unwrap();
+        let now = self._now(&log);
+        if time < now {
+            panic!("Cannot move time backwards!");
+        }
+        log.push(time.duration_since(now).unwrap());
+    }
 }
 
 impl TimeSource for ManualTimeSource {
     fn now(&self) -> SystemTime {
-        self.start_time + self.log.lock().unwrap().iter().sum::<Duration>()
+        self._now(&self.log.lock().unwrap())
     }
 }
 

@@ -199,6 +199,8 @@ impl Builder {
 #[cfg(test)]
 mod test {
     use aws_credential_types::provider::ProvideCredentials;
+    use aws_smithy_async::time::StaticTimeSource;
+    use std::time::UNIX_EPOCH;
 
     use crate::default_provider::credentials::DefaultCredentialsChain;
 
@@ -279,21 +281,15 @@ mod test {
     make_test!(imds_no_iam_role);
     make_test!(imds_default_chain_error);
     make_test!(imds_default_chain_success, builder: |config| {
-        config.with_time_source(aws_credential_types::time_source::TimeSource::testing(
-            &aws_credential_types::time_source::TestingTimeSource::new(std::time::UNIX_EPOCH),
-        ))
+        config.with_time_source(StaticTimeSource::new(UNIX_EPOCH))
     });
     make_test!(imds_assume_role);
     make_test!(imds_config_with_no_creds, builder: |config| {
-        config.with_time_source(aws_credential_types::time_source::TimeSource::testing(
-            &aws_credential_types::time_source::TestingTimeSource::new(std::time::UNIX_EPOCH),
-        ))
+        config.with_time_source(StaticTimeSource::new(UNIX_EPOCH))
     });
     make_test!(imds_disabled);
     make_test!(imds_default_chain_retries, builder: |config| {
-        config.with_time_source(aws_credential_types::time_source::TimeSource::testing(
-            &aws_credential_types::time_source::TestingTimeSource::new(std::time::UNIX_EPOCH),
-        ))
+        config.with_time_source(StaticTimeSource::new(UNIX_EPOCH))
     });
     make_test!(ecs_assume_role);
     make_test!(ecs_credentials);
@@ -335,7 +331,6 @@ mod test {
     async fn no_providers_configured_err() {
         use crate::provider_config::ProviderConfig;
         use aws_credential_types::provider::error::CredentialsError;
-        use aws_credential_types::time_source::TimeSource;
         use aws_smithy_async::rt::sleep::TokioSleep;
         use aws_smithy_client::erase::boxclone::BoxCloneService;
         use aws_smithy_client::never::NeverConnected;
@@ -343,7 +338,7 @@ mod test {
         tokio::time::pause();
         let conf = ProviderConfig::no_configuration()
             .with_tcp_connector(BoxCloneService::new(NeverConnected::new()))
-            .with_time_source(TimeSource::default())
+            .with_time_source(StaticTimeSource::new(UNIX_EPOCH))
             .with_sleep(TokioSleep::new());
         let provider = DefaultCredentialsChain::builder()
             .configure(conf)

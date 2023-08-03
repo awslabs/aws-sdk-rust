@@ -291,9 +291,10 @@ mod test {
     use crate::sts::AssumeRoleProvider;
     use aws_credential_types::credential_fn::provide_credentials_fn;
     use aws_credential_types::provider::ProvideCredentials;
-    use aws_credential_types::time_source::{TestingTimeSource, TimeSource};
     use aws_credential_types::Credentials;
     use aws_smithy_async::rt::sleep::TokioSleep;
+    use aws_smithy_async::test_util::instant_time_and_sleep;
+    use aws_smithy_async::time::StaticTimeSource;
     use aws_smithy_client::erase::DynConnector;
     use aws_smithy_client::test_connection::{capture_request, TestConnection};
     use aws_smithy_http::body::SdkBody;
@@ -305,9 +306,9 @@ mod test {
         let (server, request) = capture_request(None);
         let provider_conf = ProviderConfig::empty()
             .with_sleep(TokioSleep::new())
-            .with_time_source(TimeSource::testing(&TestingTimeSource::new(
+            .with_time_source(StaticTimeSource::new(
                 UNIX_EPOCH + Duration::from_secs(1234567890 - 120),
-            )))
+            ))
             .with_http_connector(DynConnector::new(server));
         let provider = AssumeRoleProvider::builder("myrole")
             .configure(&provider_conf)
@@ -335,13 +336,13 @@ mod test {
             )).unwrap()),
         ]);
 
-        let mut testing_time_source = TestingTimeSource::new(
+        let (testing_time_source, sleep) = instant_time_and_sleep(
             UNIX_EPOCH + Duration::from_secs(1234567890 - 120), // 1234567890 since UNIX_EPOCH is 2009-02-13T23:31:30Z
         );
 
         let provider_conf = ProviderConfig::empty()
-            .with_sleep(TokioSleep::new())
-            .with_time_source(TimeSource::testing(&testing_time_source))
+            .with_sleep(sleep)
+            .with_time_source(testing_time_source.clone())
             .with_http_connector(DynConnector::new(conn));
         let credentials_list = std::sync::Arc::new(std::sync::Mutex::new(vec![
             Credentials::new(
@@ -370,8 +371,6 @@ mod test {
                     Ok(next)
                 }
             }));
-
-        tokio::time::pause();
 
         let creds_first = provider
             .provide_credentials()
