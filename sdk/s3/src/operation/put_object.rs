@@ -215,7 +215,7 @@ impl PutObjectInput {
         let middleware = crate::middleware::DefaultMiddleware::default();
         let mut svc = ::tower::builder::ServiceBuilder::new()
             .layer(&middleware)
-            .service(crate::presigning::service::PresignedRequestService::new());
+            .service(crate::presigning_service::PresignedRequestService::new());
 
         use ::tower::{Service, ServiceExt};
         Ok(svc.ready().await?.call(request).await?)

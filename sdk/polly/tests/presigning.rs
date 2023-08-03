@@ -5,35 +5,32 @@
 
 use aws_sdk_polly as polly;
 use polly::config::{Config, Credentials, Region};
-use polly::operation::synthesize_speech::SynthesizeSpeechInput;
 use polly::presigning::PresigningConfig;
 use polly::types::{OutputFormat, VoiceId};
-use std::error::Error;
 use std::time::{Duration, SystemTime};
 
 #[tokio::test]
-async fn test_presigning() -> Result<(), Box<dyn Error>> {
+async fn test_presigning() {
     let config = Config::builder()
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .build();
+    let client = polly::Client::from_conf(config);
 
-    let input = SynthesizeSpeechInput::builder()
+    let presigned = client
+        .synthesize_speech()
         .output_format(OutputFormat::Mp3)
         .text("hello, world")
         .voice_id(VoiceId::Joanna)
-        .build()?;
-
-    let presigned = input
         .presigned(
-            &config,
             PresigningConfig::builder()
                 .start_time(SystemTime::UNIX_EPOCH + Duration::from_secs(1234567891))
                 .expires_in(Duration::from_secs(30))
                 .build()
                 .unwrap(),
         )
-        .await?;
+        .await
+        .expect("success");
 
     let pq = presigned.uri().path_and_query().unwrap();
     let path = pq.path();
@@ -59,6 +56,4 @@ async fn test_presigning() -> Result<(), Box<dyn Error>> {
         &query_params
     );
     assert!(presigned.headers().is_empty());
-
-    Ok(())
 }

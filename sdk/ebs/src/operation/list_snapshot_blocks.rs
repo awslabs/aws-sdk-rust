@@ -232,10 +232,10 @@ mod list_snapshot_blocks_request_test {
         let parser = crate::operation::list_snapshot_blocks::ListSnapshotBlocks::new();
         let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-                        let (http_response, _) = op_response.into_parts();
-                        let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-                        <crate::operation::list_snapshot_blocks::ListSnapshotBlocks as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
-                    });
+                            let (http_response, _) = op_response.into_parts();
+                            let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                            <crate::operation::list_snapshot_blocks::ListSnapshotBlocks as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                        });
         let parsed = parsed.expect_err("should be error response");
         if let crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::ValidationException(parsed) = parsed {
             ::pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
@@ -272,10 +272,10 @@ mod list_snapshot_blocks_request_test {
         let parser = crate::operation::list_snapshot_blocks::ListSnapshotBlocks::new();
         let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-                        let (http_response, _) = op_response.into_parts();
-                        let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-                        <crate::operation::list_snapshot_blocks::ListSnapshotBlocks as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
-                    });
+                            let (http_response, _) = op_response.into_parts();
+                            let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                            <crate::operation::list_snapshot_blocks::ListSnapshotBlocks as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                        });
         let parsed = parsed.expect_err("should be error response");
         if let crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::ValidationException(parsed) = parsed {
             ::pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");

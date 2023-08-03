@@ -38,6 +38,31 @@ impl Default for SharedTimeSource {
     }
 }
 
+/// Time source that always returns the same time
+#[derive(Debug)]
+pub struct StaticTimeSource {
+    time: SystemTime,
+}
+
+impl StaticTimeSource {
+    /// Creates a new static time source that always returns the same time
+    pub fn new(time: SystemTime) -> Self {
+        Self { time }
+    }
+}
+
+impl TimeSource for StaticTimeSource {
+    fn now(&self) -> SystemTime {
+        self.time
+    }
+}
+
+impl From<StaticTimeSource> for SharedTimeSource {
+    fn from(value: StaticTimeSource) -> Self {
+        SharedTimeSource::new(value)
+    }
+}
+
 #[derive(Debug, Clone)]
 /// Time source structure used inside SDK
 ///

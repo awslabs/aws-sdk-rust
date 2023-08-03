@@ -3,34 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_s3::operation::get_object::{GetObject, GetObjectError};
-use aws_sdk_s3::operation::list_buckets::ListBuckets;
+use aws_sdk_s3::operation::get_object::GetObjectError;
 use aws_sdk_s3::operation::{RequestId, RequestIdExt};
+use aws_sdk_s3::{config::Credentials, config::Region, Client, Config};
+use aws_smithy_client::test_connection::capture_request;
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::operation;
-use aws_smithy_http::response::ParseHttpResponse;
-use bytes::Bytes;
 
-#[test]
-fn get_request_id_from_modeled_error() {
-    let resp = http::Response::builder()
-        .header("x-amz-request-id", "correct-request-id")
-        .header("x-amz-id-2", "correct-extended-request-id")
-        .status(404)
-        .body(
-            r#"<?xml version="1.0" encoding="UTF-8"?>
-            <Error>
-              <Code>NoSuchKey</Code>
-              <Message>The resource you requested does not exist</Message>
-              <Resource>/mybucket/myfoto.jpg</Resource>
-              <RequestId>incorrect-request-id</RequestId>
-            </Error>"#,
-        )
-        .unwrap();
-    let err = GetObject::new()
-        .parse_loaded(&resp.map(Bytes::from))
-        .expect_err("status was 404, this is an error");
-    assert!(matches!(err, GetObjectError::NoSuchKey(_)));
+#[tokio::test]
+async fn get_request_id_from_modeled_error() {
+    let (conn, request) = capture_request(Some(
+        http::Response::builder()
+            .header("x-amz-request-id", "correct-request-id")
+            .header("x-amz-id-2", "correct-extended-request-id")
+            .status(404)
+            .body(SdkBody::from(
+                r#"<?xml version="1.0" encoding="UTF-8"?>
+                <Error>
+                  <Code>NoSuchKey</Code>
+                  <Message>The resource you requested does not exist</Message>
+                  <Resource>/mybucket/myfoto.jpg</Resource>
+                  <RequestId>incorrect-request-id</RequestId>
+                </Error>"#,
+            ))
+            .unwrap(),
+    ));
+    let config = Config::builder()
+        .http_connector(conn)
+        .credentials_provider(Credentials::for_tests())
+        .region(Region::new("us-east-1"))
+        .build();
+    let client = Client::from_conf(config);
+    let err = client
+        .get_object()
+        .key("dontcare")
+        .send()
+        .await
+        .expect_err("status was 404, this is an error")
+        .into_service_error();
+    request.expect_request();
+    assert!(
+        matches!(err, GetObjectError::NoSuchKey(_)),
+        "expected NoSuchKey, got {err:?}",
+    );
     assert_eq!(Some("correct-request-id"), err.request_id());
     assert_eq!(Some("correct-request-id"), err.meta().request_id());
     assert_eq!(
@@ -43,25 +57,38 @@ fn get_request_id_from_modeled_error() {
     );
 }
 
-#[test]
-fn get_request_id_from_unmodeled_error() {
-    let resp = http::Response::builder()
-        .header("x-amz-request-id", "correct-request-id")
-        .header("x-amz-id-2", "correct-extended-request-id")
-        .status(500)
-        .body(
-            r#"<?xml version="1.0" encoding="UTF-8"?>
-            <Error>
-              <Code>SomeUnmodeledError</Code>
-              <Message>Something bad happened</Message>
-              <Resource>/mybucket/myfoto.jpg</Resource>
-              <RequestId>incorrect-request-id</RequestId>
-            </Error>"#,
-        )
-        .unwrap();
-    let err = GetObject::new()
-        .parse_loaded(&resp.map(Bytes::from))
-        .expect_err("status 500");
+#[tokio::test]
+async fn get_request_id_from_unmodeled_error() {
+    let (conn, request) = capture_request(Some(
+        http::Response::builder()
+            .header("x-amz-request-id", "correct-request-id")
+            .header("x-amz-id-2", "correct-extended-request-id")
+            .status(500)
+            .body(SdkBody::from(
+                r#"<?xml version="1.0" encoding="UTF-8"?>
+                <Error>
+                  <Code>SomeUnmodeledError</Code>
+                  <Message>Something bad happened</Message>
+                  <Resource>/mybucket/myfoto.jpg</Resource>
+                  <RequestId>incorrect-request-id</RequestId>
+                </Error>"#,
+            ))
+            .unwrap(),
+    ));
+    let config = Config::builder()
+        .http_connector(conn)
+        .credentials_provider(Credentials::for_tests())
+        .region(Region::new("us-east-1"))
+        .build();
+    let client = Client::from_conf(config);
+    let err = client
+        .get_object()
+        .key("dontcare")
+        .send()
+        .await
+        .expect_err("status 500")
+        .into_service_error();
+    request.expect_request();
     assert!(matches!(err, GetObjectError::Unhandled(_)));
     assert_eq!(Some("correct-request-id"), err.request_id());
     assert_eq!(Some("correct-request-id"), err.meta().request_id());
@@ -75,23 +102,34 @@ fn get_request_id_from_unmodeled_error() {
     );
 }
 
-#[test]
-fn get_request_id_from_successful_nonstreaming_response() {
-    let resp = http::Response::builder()
-        .header("x-amz-request-id", "correct-request-id")
-        .header("x-amz-id-2", "correct-extended-request-id")
-        .status(200)
-        .body(
-            r#"<?xml version="1.0" encoding="UTF-8"?>
-            <ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-              <Owner><ID>some-id</ID><DisplayName>some-display-name</DisplayName></Owner>
-              <Buckets></Buckets>
-            </ListAllMyBucketsResult>"#,
-        )
-        .unwrap();
-    let output = ListBuckets::new()
-        .parse_loaded(&resp.map(Bytes::from))
+#[tokio::test]
+async fn get_request_id_from_successful_nonstreaming_response() {
+    let (conn, request) = capture_request(Some(
+        http::Response::builder()
+            .header("x-amz-request-id", "correct-request-id")
+            .header("x-amz-id-2", "correct-extended-request-id")
+            .status(200)
+            .body(SdkBody::from(
+                r#"<?xml version="1.0" encoding="UTF-8"?>
+                <ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+                  <Owner><ID>some-id</ID><DisplayName>some-display-name</DisplayName></Owner>
+                  <Buckets></Buckets>
+                </ListAllMyBucketsResult>"#,
+            ))
+            .unwrap(),
+    ));
+    let config = Config::builder()
+        .http_connector(conn)
+        .credentials_provider(Credentials::for_tests())
+        .region(Region::new("us-east-1"))
+        .build();
+    let client = Client::from_conf(config);
+    let output = client
+        .list_buckets()
+        .send()
+        .await
         .expect("valid successful response");
+    request.expect_request();
     assert_eq!(Some("correct-request-id"), output.request_id());
     assert_eq!(
         Some("correct-extended-request-id"),
@@ -99,18 +137,29 @@ fn get_request_id_from_successful_nonstreaming_response() {
     );
 }
 
-#[test]
-fn get_request_id_from_successful_streaming_response() {
-    let resp = http::Response::builder()
-        .header("x-amz-request-id", "correct-request-id")
-        .header("x-amz-id-2", "correct-extended-request-id")
-        .status(200)
-        .body(SdkBody::from("some streaming file data"))
-        .unwrap();
-    let mut resp = operation::Response::new(resp);
-    let output = GetObject::new()
-        .parse_unloaded(&mut resp)
+#[tokio::test]
+async fn get_request_id_from_successful_streaming_response() {
+    let (conn, request) = capture_request(Some(
+        http::Response::builder()
+            .header("x-amz-request-id", "correct-request-id")
+            .header("x-amz-id-2", "correct-extended-request-id")
+            .status(200)
+            .body(SdkBody::from("some streaming file data"))
+            .unwrap(),
+    ));
+    let config = Config::builder()
+        .http_connector(conn)
+        .credentials_provider(Credentials::for_tests())
+        .region(Region::new("us-east-1"))
+        .build();
+    let client = Client::from_conf(config);
+    let output = client
+        .get_object()
+        .key("dontcare")
+        .send()
+        .await
         .expect("valid successful response");
+    request.expect_request();
     assert_eq!(Some("correct-request-id"), output.request_id());
     assert_eq!(
         Some("correct-extended-request-id"),
@@ -119,26 +168,37 @@ fn get_request_id_from_successful_streaming_response() {
 }
 
 // Verify that the conversion from operation error to the top-level service error maintains the request ID
-#[test]
-fn conversion_to_service_error_maintains_request_id() {
-    let resp = http::Response::builder()
-        .header("x-amz-request-id", "correct-request-id")
-        .header("x-amz-id-2", "correct-extended-request-id")
-        .status(404)
-        .body(
-            r#"<?xml version="1.0" encoding="UTF-8"?>
-            <Error>
-              <Code>NoSuchKey</Code>
-              <Message>The resource you requested does not exist</Message>
-              <Resource>/mybucket/myfoto.jpg</Resource>
-              <RequestId>incorrect-request-id</RequestId>
-            </Error>"#,
-        )
-        .unwrap();
-    let err = GetObject::new()
-        .parse_loaded(&resp.map(Bytes::from))
+#[tokio::test]
+async fn conversion_to_service_error_maintains_request_id() {
+    let (conn, request) = capture_request(Some(
+        http::Response::builder()
+            .header("x-amz-request-id", "correct-request-id")
+            .header("x-amz-id-2", "correct-extended-request-id")
+            .status(404)
+            .body(SdkBody::from(
+                r#"<?xml version="1.0" encoding="UTF-8"?>
+                <Error>
+                  <Code>NoSuchKey</Code>
+                  <Message>The resource you requested does not exist</Message>
+                  <Resource>/mybucket/myfoto.jpg</Resource>
+                  <RequestId>incorrect-request-id</RequestId>
+                </Error>"#,
+            ))
+            .unwrap(),
+    ));
+    let config = Config::builder()
+        .http_connector(conn)
+        .credentials_provider(Credentials::for_tests())
+        .region(Region::new("us-east-1"))
+        .build();
+    let client = Client::from_conf(config);
+    let err = client
+        .get_object()
+        .key("dontcare")
+        .send()
+        .await
         .expect_err("status was 404, this is an error");
-
+    request.expect_request();
     let service_error: aws_sdk_s3::Error = err.into();
     assert_eq!(Some("correct-request-id"), service_error.request_id());
     assert_eq!(

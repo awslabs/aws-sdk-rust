@@ -108,13 +108,15 @@ impl SynthesizeSpeechFluentBuilder {
     /// Presigned requests can be given to other users or applications to access a resource or perform
     /// an operation without having access to the AWS security credentials.
     ///
+    #[allow(unused_mut)]
     pub async fn presigned(
-        self,
+        mut self,
         presigning_config: crate::presigning::PresigningConfig,
     ) -> ::std::result::Result<
         crate::presigning::PresignedRequest,
         ::aws_smithy_http::result::SdkError<
             crate::operation::synthesize_speech::SynthesizeSpeechError,
+            ::aws_smithy_http::operation::Response,
         >,
     > {
         let input = self

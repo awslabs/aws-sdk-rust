@@ -200,6 +200,9 @@ mod no_credentials;
 pub mod presigning;
 
 ///
+pub(crate) mod presigning_service;
+
+///
 mod s3_request_id;
 
 mod lens;

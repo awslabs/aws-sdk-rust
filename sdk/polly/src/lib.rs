@@ -200,6 +200,9 @@ mod no_credentials;
 ///
 pub mod presigning;
 
+///
+pub(crate) mod presigning_service;
+
 mod lens;
 
 pub(crate) mod protocol_serde;

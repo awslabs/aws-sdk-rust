@@ -85,9 +85,7 @@ pub(super) async fn orchestrate_auth(
                     extract_endpoint_auth_scheme_config(endpoint, scheme_id)?;
 
                 let identity = identity_resolver.resolve_identity(cfg).await?;
-                let request = ctx
-                    .request_mut()
-                    .expect("request is present before orchestrate_auth is called");
+                let request = ctx.request_mut().expect("set during serialization");
                 request_signer.sign_request(
                     request,
                     &identity,

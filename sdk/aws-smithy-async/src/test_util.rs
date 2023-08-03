@@ -194,34 +194,9 @@ pub fn controlled_time_and_sleep(
     (ManualTimeSource { start_time, log }, sleep, gate)
 }
 
-#[derive(Debug)]
-/// Time source that always returns the same time
-pub struct StaticTimeSource {
-    time: SystemTime,
-}
-
-impl StaticTimeSource {
-    /// Creates a new static time source that always returns the same time
-    pub fn new(time: SystemTime) -> Self {
-        Self { time }
-    }
-}
-
-impl TimeSource for StaticTimeSource {
-    fn now(&self) -> SystemTime {
-        self.time
-    }
-}
-
 impl TimeSource for SystemTime {
     fn now(&self) -> SystemTime {
         *self
-    }
-}
-
-impl From<StaticTimeSource> for SharedTimeSource {
-    fn from(value: StaticTimeSource) -> Self {
-        SharedTimeSource::new(value)
     }
 }
 

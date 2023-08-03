@@ -4,47 +4,73 @@
  */
 
 use aws_sdk_s3 as s3;
+use futures_util::future::FutureExt;
+use futures_util::Future;
 use http::header::{CONTENT_LENGTH, CONTENT_TYPE};
 use http::{HeaderMap, HeaderValue};
 use s3::config::{Credentials, Region};
-use s3::operation::get_object::GetObjectInput;
-use s3::operation::head_object::HeadObjectInput;
-use s3::operation::put_object::PutObjectInput;
-use s3::operation::upload_part::UploadPartInput;
+use s3::operation::get_object::builders::GetObjectFluentBuilder;
+use s3::operation::head_object::builders::HeadObjectFluentBuilder;
+use s3::operation::put_object::builders::PutObjectFluentBuilder;
+use s3::operation::upload_part::builders::UploadPartFluentBuilder;
 use s3::presigning::{PresignedRequest, PresigningConfig};
-use std::error::Error;
+use std::pin::Pin;
 use std::time::{Duration, SystemTime};
+
+trait TestOperation {
+    fn presign_for_test(
+        self,
+        config: PresigningConfig,
+    ) -> Pin<Box<dyn Future<Output = PresignedRequest>>>;
+}
+
+macro_rules! rig_operation {
+    ($fluent_builder:ident) => {
+        impl TestOperation for $fluent_builder {
+            fn presign_for_test(
+                self,
+                config: PresigningConfig,
+            ) -> Pin<Box<dyn Future<Output = PresignedRequest>>> {
+                Box::pin($fluent_builder::presigned(self, config).map(|out| out.expect("success")))
+            }
+        }
+    };
+}
+
+rig_operation!(GetObjectFluentBuilder);
+rig_operation!(PutObjectFluentBuilder);
+rig_operation!(UploadPartFluentBuilder);
+rig_operation!(HeadObjectFluentBuilder);
 
 /// Generates a `PresignedRequest` from the given input.
 /// Assumes that that input has a `presigned` method on it.
-macro_rules! presign_input {
-    ($input:expr) => {{
-        let creds = Credentials::for_tests();
-        let config = s3::Config::builder()
-            .credentials_provider(creds)
-            .region(Region::new("us-east-1"))
-            .build();
+async fn presign<O, F>(operation: O) -> PresignedRequest
+where
+    O: FnOnce(s3::Client) -> F,
+    F: TestOperation,
+{
+    let creds = Credentials::for_tests();
+    let config = s3::Config::builder()
+        .credentials_provider(creds)
+        .region(Region::new("us-east-1"))
+        .build();
+    let client = s3::Client::from_conf(config);
 
-        let req: PresignedRequest = $input
-            .presigned(
-                &config,
-                PresigningConfig::builder()
-                    .start_time(SystemTime::UNIX_EPOCH + Duration::from_secs(1234567891))
-                    .expires_in(Duration::from_secs(30))
-                    .build()
-                    .unwrap(),
-            )
-            .await?;
-        req
-    }};
+    operation(client)
+        .presign_for_test(
+            PresigningConfig::builder()
+                .start_time(SystemTime::UNIX_EPOCH + Duration::from_secs(1234567891))
+                .expires_in(Duration::from_secs(30))
+                .build()
+                .unwrap(),
+        )
+        .await
 }
 
 #[tokio::test]
-async fn test_presigning() -> Result<(), Box<dyn Error>> {
-    let presigned = presign_input!(GetObjectInput::builder()
-        .bucket("test-bucket")
-        .key("test-key")
-        .build()?);
+async fn test_presigning() {
+    let presigned =
+        presign(|client| client.get_object().bucket("test-bucket").key("test-key")).await;
 
     let pq = presigned.uri().path_and_query().unwrap();
     let path = pq.path();
@@ -52,13 +78,13 @@ async fn test_presigning() -> Result<(), Box<dyn Error>> {
     let mut query_params: Vec<&str> = query.split('&').collect();
     query_params.sort();
 
-    assert_eq!(
+    pretty_assertions::assert_eq!(
         "test-bucket.s3.us-east-1.amazonaws.com",
         presigned.uri().authority().unwrap()
     );
     assert_eq!("GET", presigned.method().as_str());
     assert_eq!("/test-key", path);
-    assert_eq!(
+    pretty_assertions::assert_eq!(
         &[
             "X-Amz-Algorithm=AWS4-HMAC-SHA256",
             "X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request",
@@ -72,18 +98,19 @@ async fn test_presigning() -> Result<(), Box<dyn Error>> {
         &query_params
     );
     assert!(presigned.headers().is_empty());
-
-    Ok(())
 }
 
 #[tokio::test]
-async fn test_presigning_with_payload_headers() -> Result<(), Box<dyn Error>> {
-    let presigned = presign_input!(PutObjectInput::builder()
-        .bucket("test-bucket")
-        .key("test-key")
-        .content_length(12345)
-        .content_type("application/x-test")
-        .build()?);
+async fn test_presigning_with_payload_headers() {
+    let presigned = presign(|client| {
+        client
+            .put_object()
+            .bucket("test-bucket")
+            .key("test-key")
+            .content_length(12345)
+            .content_type("application/x-test")
+    })
+    .await;
 
     let pq = presigned.uri().path_and_query().unwrap();
     let path = pq.path();
@@ -91,13 +118,13 @@ async fn test_presigning_with_payload_headers() -> Result<(), Box<dyn Error>> {
     let mut query_params: Vec<&str> = query.split('&').collect();
     query_params.sort();
 
-    assert_eq!(
+    pretty_assertions::assert_eq!(
         "test-bucket.s3.us-east-1.amazonaws.com",
         presigned.uri().authority().unwrap()
     );
     assert_eq!("PUT", presigned.method().as_str());
     assert_eq!("/test-key", path);
-    assert_eq!(
+    pretty_assertions::assert_eq!(
         &[
             "X-Amz-Algorithm=AWS4-HMAC-SHA256",
             "X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request",
@@ -115,49 +142,49 @@ async fn test_presigning_with_payload_headers() -> Result<(), Box<dyn Error>> {
     expected_headers.insert(CONTENT_LENGTH, HeaderValue::from_static("12345"));
     expected_headers.insert(CONTENT_TYPE, HeaderValue::from_static("application/x-test"));
     assert_eq!(&expected_headers, presigned.headers());
-
-    Ok(())
 }
 
 #[tokio::test]
-async fn test_presigned_upload_part() -> Result<(), Box<dyn Error>> {
-    let presigned = presign_input!(UploadPartInput::builder()
-        .content_length(12345)
-        .bucket("bucket")
-        .key("key")
-        .part_number(0)
-        .upload_id("upload-id")
-        .build()?);
-    assert_eq!(
-        presigned.uri().to_string(),
+async fn test_presigned_upload_part() {
+    let presigned = presign(|client| {
+        client
+            .upload_part()
+            .content_length(12345)
+            .bucket("bucket")
+            .key("key")
+            .part_number(0)
+            .upload_id("upload-id")
+    })
+    .await;
+    pretty_assertions::assert_eq!(
         "https://bucket.s3.us-east-1.amazonaws.com/key?x-id=UploadPart&partNumber=0&uploadId=upload-id&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=content-length%3Bhost&X-Amz-Signature=a702867244f0bd1fb4d161e2a062520dcbefae3b9992d2e5366bcd61a60c6ddd&X-Amz-Security-Token=notarealsessiontoken",
+        presigned.uri().to_string(),
     );
-    Ok(())
 }
 
 #[tokio::test]
-async fn test_presigning_object_lambda() -> Result<(), Box<dyn Error>> {
-    let presigned = presign_input!(GetObjectInput::builder()
-        .bucket("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my-banner-ap-name")
-        .key("test2.txt")
-        .build()
-        .unwrap());
+async fn test_presigning_object_lambda() {
+    let presigned = presign(|client| {
+        client
+            .get_object()
+            .bucket("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my-banner-ap-name")
+            .key("test2.txt")
+    })
+    .await;
     // since the URI is `my-banner-api-name...` we know EP2 is working properly for presigning
-    assert_eq!(presigned.uri().to_string(), "https://my-banner-ap-name-123456789012.s3-object-lambda.us-west-2.amazonaws.com/test2.txt?x-id=GetObject&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-west-2%2Fs3-object-lambda%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=027976453050b6f9cca7af80a59c05ee572b462e0fc1ef564c59412b903fcdf2&X-Amz-Security-Token=notarealsessiontoken");
-    Ok(())
+    pretty_assertions::assert_eq!(
+        "https://my-banner-ap-name-123456789012.s3-object-lambda.us-west-2.amazonaws.com/test2.txt?x-id=GetObject&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-west-2%2Fs3-object-lambda%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=027976453050b6f9cca7af80a59c05ee572b462e0fc1ef564c59412b903fcdf2&X-Amz-Security-Token=notarealsessiontoken",
+        presigned.uri().to_string()
+    );
 }
 
 #[tokio::test]
-async fn test_presigned_head_object() -> Result<(), Box<dyn Error>> {
-    let presigned = presign_input!(HeadObjectInput::builder()
-        .bucket("bucket")
-        .key("key")
-        .build()?);
+async fn test_presigned_head_object() {
+    let presigned = presign(|client| client.head_object().bucket("bucket").key("key")).await;
 
     assert_eq!("HEAD", presigned.method().as_str());
-    assert_eq!(
-        presigned.uri().to_string(),
+    pretty_assertions::assert_eq!(
         "https://bucket.s3.us-east-1.amazonaws.com/key?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=6b97012e70d5ee3528b5591e0e90c0f45e0fa303506f854eff50ff922751a193&X-Amz-Security-Token=notarealsessiontoken",
+        presigned.uri().to_string(),
     );
-    Ok(())
 }

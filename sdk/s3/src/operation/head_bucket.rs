@@ -183,10 +183,10 @@ mod head_bucket_request_test {
         let parser = crate::operation::head_bucket::HeadBucket::new();
         let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-                        let (http_response, _) = op_response.into_parts();
-                        let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-                        <crate::operation::head_bucket::HeadBucket as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
-                    });
+                            let (http_response, _) = op_response.into_parts();
+                            let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                            <crate::operation::head_bucket::HeadBucket as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                        });
         let parsed = parsed.expect_err("should be error response");
         if let crate::operation::head_bucket::HeadBucketError::NotFound(parsed) = parsed {
             ::pretty_assertions::assert_eq!(

@@ -3,9 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/// Errors that can occur while running the orchestrator.
-mod error;
-
 use crate::client::auth::{AuthOptionResolver, AuthOptionResolverParams, HttpAuthSchemes};
 use crate::client::identity::IdentityResolvers;
 use crate::client::interceptors::context::{Error, Input, Output};
@@ -23,6 +20,9 @@ use std::fmt;
 use std::future::Future as StdFuture;
 use std::pin::Pin;
 use std::sync::Arc;
+
+/// Errors that can occur while running the orchestrator.
+mod error;
 
 pub use error::OrchestratorError;
 

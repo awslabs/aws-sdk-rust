@@ -203,10 +203,10 @@ mod complete_snapshot_request_test {
         let parser = crate::operation::complete_snapshot::CompleteSnapshot::new();
         let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-                        let (http_response, _) = op_response.into_parts();
-                        let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-                        <crate::operation::complete_snapshot::CompleteSnapshot as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
-                    });
+                            let (http_response, _) = op_response.into_parts();
+                            let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                            <crate::operation::complete_snapshot::CompleteSnapshot as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                        });
         let parsed = parsed.expect_err("should be error response");
         if let crate::operation::complete_snapshot::CompleteSnapshotError::ValidationException(
             parsed,
@@ -256,10 +256,10 @@ mod complete_snapshot_request_test {
         let parser = crate::operation::complete_snapshot::CompleteSnapshot::new();
         let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-                        let (http_response, _) = op_response.into_parts();
-                        let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-                        <crate::operation::complete_snapshot::CompleteSnapshot as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
-                    });
+                            let (http_response, _) = op_response.into_parts();
+                            let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                            <crate::operation::complete_snapshot::CompleteSnapshot as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                        });
         let parsed = parsed.expect_err("should be error response");
         if let crate::operation::complete_snapshot::CompleteSnapshotError::ValidationException(
             parsed,

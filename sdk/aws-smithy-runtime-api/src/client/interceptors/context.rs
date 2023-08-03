@@ -37,7 +37,7 @@ use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypeErasedError};
 use phase::Phase;
 use std::{fmt, mem};
-use tracing::{error, trace};
+use tracing::{debug, error, trace};
 
 pub type Input = TypeErasedBox;
 pub type Output = TypeErasedBox;
@@ -149,10 +149,8 @@ where
     }
 
     /// Takes ownership of the request.
-    pub fn take_request(&mut self) -> Request {
-        self.request
-            .take()
-            .expect("take request once during 'transmit'")
+    pub fn take_request(&mut self) -> Option<Request> {
+        self.request.take()
     }
 
     /// Set the response for the operation being invoked.
@@ -177,7 +175,7 @@ where
 
     /// Returns the deserialized output or error.
     pub fn output_or_error(&self) -> Option<Result<&O, &OrchestratorError<E>>> {
-        self.output_or_error.as_ref().map(|res| res.as_ref())
+        self.output_or_error.as_ref().map(Result::as_ref)
     }
 
     /// Returns the mutable reference to the deserialized output or error.
@@ -188,7 +186,7 @@ where
     /// Advance to the Serialization phase.
     #[doc(hidden)]
     pub fn enter_serialization_phase(&mut self) {
-        trace!("entering \'serialization\' phase");
+        debug!("entering \'serialization\' phase");
         debug_assert!(
             self.phase.is_before_serialization(),
             "called enter_serialization_phase but phase is not before 'serialization'"
@@ -199,7 +197,7 @@ where
     /// Advance to the BeforeTransmit phase.
     #[doc(hidden)]
     pub fn enter_before_transmit_phase(&mut self) {
-        trace!("entering \'before transmit\' phase");
+        debug!("entering \'before transmit\' phase");
         debug_assert!(
             self.phase.is_serialization(),
             "called enter_before_transmit_phase but phase is not 'serialization'"
@@ -212,17 +210,14 @@ where
             self.request.is_some(),
             "request must be set before calling enter_before_transmit_phase"
         );
-        self.request_checkpoint = try_clone(
-            self.request()
-                .expect("request is set before calling enter_before_transmit_phase"),
-        );
+        self.request_checkpoint = try_clone(self.request().expect("checked above"));
         self.phase = Phase::BeforeTransmit;
     }
 
     /// Advance to the Transmit phase.
     #[doc(hidden)]
     pub fn enter_transmit_phase(&mut self) {
-        trace!("entering \'transmit\' phase");
+        debug!("entering \'transmit\' phase");
         debug_assert!(
             self.phase.is_before_transmit(),
             "called enter_transmit_phase but phase is not before transmit"
@@ -233,7 +228,7 @@ where
     /// Advance to the BeforeDeserialization phase.
     #[doc(hidden)]
     pub fn enter_before_deserialization_phase(&mut self) {
-        trace!("entering \'before deserialization\' phase");
+        debug!("entering \'before deserialization\' phase");
         debug_assert!(
             self.phase.is_transmit(),
             "called enter_before_deserialization_phase but phase is not 'transmit'"
@@ -252,7 +247,7 @@ where
     /// Advance to the Deserialization phase.
     #[doc(hidden)]
     pub fn enter_deserialization_phase(&mut self) {
-        trace!("entering \'deserialization\' phase");
+        debug!("entering \'deserialization\' phase");
         debug_assert!(
             self.phase.is_before_deserialization(),
             "called enter_deserialization_phase but phase is not 'before deserialization'"
@@ -263,7 +258,7 @@ where
     /// Advance to the AfterDeserialization phase.
     #[doc(hidden)]
     pub fn enter_after_deserialization_phase(&mut self) {
-        trace!("entering \'after deserialization\' phase");
+        debug!("entering \'after deserialization\' phase");
         debug_assert!(
             self.phase.is_deserialization(),
             "called enter_after_deserialization_phase but phase is not 'deserialization'"
@@ -480,7 +475,7 @@ mod tests {
         );
 
         context.enter_transmit_phase();
-        let request = context.take_request();
+        let request = context.take_request().unwrap();
         assert_eq!(
             "request-modified-after-signing",
             request.headers().get("test").unwrap()
