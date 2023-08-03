@@ -45,6 +45,11 @@ impl GetJobOutputInput {
         self.range.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for GetJobOutputInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl GetJobOutputInput {
     /// Creates a new builder-style object to manufacture [`GetJobOutputInput`](crate::operation::get_job_output::GetJobOutputInput).
     pub fn builder() -> crate::operation::get_job_output::builders::GetJobOutputInputBuilder {

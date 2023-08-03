@@ -12,6 +12,11 @@ impl PurchaseProvisionedCapacityInput {
         self.account_id.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for PurchaseProvisionedCapacityInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl PurchaseProvisionedCapacityInput {
     /// Creates a new builder-style object to manufacture [`PurchaseProvisionedCapacityInput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput).
     pub fn builder() -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder {

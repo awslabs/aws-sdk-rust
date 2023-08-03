@@ -57,6 +57,9 @@ const NANOS_PER_SECOND_U32: u32 = 1_000_000_000;
 #[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
 pub struct DateTime {
     pub(crate) seconds: i64,
+    /// Subsecond nanos always advances the wallclock time, even for times where seconds is negative
+    ///
+    /// Bigger subsecond nanos => later time
     pub(crate) subsecond_nanos: u32,
 }
 
@@ -93,12 +96,7 @@ impl DateTime {
     /// Returns the number of nanoseconds since the Unix epoch that this `DateTime` represents.
     pub fn as_nanos(&self) -> i128 {
         let seconds = self.seconds as i128 * NANOS_PER_SECOND;
-        if seconds < 0 {
-            let adjusted_nanos = self.subsecond_nanos as i128 - NANOS_PER_SECOND;
-            seconds + NANOS_PER_SECOND + adjusted_nanos
-        } else {
-            seconds + self.subsecond_nanos as i128
-        }
+        seconds + self.subsecond_nanos as i128
     }
 
     /// Creates a `DateTime` from a number of seconds and a fractional second since the Unix epoch.

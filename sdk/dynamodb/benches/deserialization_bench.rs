@@ -6,7 +6,7 @@
 use criterion::{criterion_group, criterion_main, Criterion};
 
 fn do_bench() {
-    #[cfg(not(aws_sdk_orchestrator_mode))]
+    #[cfg(aws_sdk_middleware_mode)]
     {
         use aws_sdk_dynamodb::operation::query::Query;
         use aws_smithy_http::response::ParseHttpResponse;

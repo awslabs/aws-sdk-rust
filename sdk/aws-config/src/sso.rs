@@ -65,6 +65,7 @@ impl SsoCredentialsProvider {
 
         let mut sso_config = SsoConfig::builder()
             .http_connector(expect_connector(
+                "The SSO credentials provider",
                 provider_config.connector(&Default::default()),
             ))
             .retry_config(RetryConfig::standard());

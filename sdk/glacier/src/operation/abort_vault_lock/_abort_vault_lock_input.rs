@@ -19,6 +19,11 @@ impl AbortVaultLockInput {
         self.vault_name.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for AbortVaultLockInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl AbortVaultLockInput {
     /// Creates a new builder-style object to manufacture [`AbortVaultLockInput`](crate::operation::abort_vault_lock::AbortVaultLockInput).
     pub fn builder() -> crate::operation::abort_vault_lock::builders::AbortVaultLockInputBuilder {

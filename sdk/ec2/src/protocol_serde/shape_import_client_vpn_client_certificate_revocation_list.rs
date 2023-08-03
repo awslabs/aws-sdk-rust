@@ -18,7 +18,7 @@ pub fn de_import_client_vpn_client_certificate_revocation_list_http_error(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_import_client_vpn_client_certificate_revocation_list_http_response_with_props(
+pub fn de_import_client_vpn_client_certificate_revocation_list_http_response(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],

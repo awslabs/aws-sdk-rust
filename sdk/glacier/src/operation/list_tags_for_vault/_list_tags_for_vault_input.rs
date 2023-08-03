@@ -19,6 +19,11 @@ impl ListTagsForVaultInput {
         self.vault_name.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for ListTagsForVaultInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl ListTagsForVaultInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForVaultInput`](crate::operation::list_tags_for_vault::ListTagsForVaultInput).
     pub fn builder() -> crate::operation::list_tags_for_vault::builders::ListTagsForVaultInputBuilder {

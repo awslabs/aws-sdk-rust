@@ -18,7 +18,10 @@ use aws_smithy_types::retry::RetryConfig;
 impl crate::provider_config::ProviderConfig {
     pub(crate) fn sts_client_config(&self) -> StsConfigBuilder {
         let mut builder = aws_sdk_sts::Config::builder()
-            .http_connector(expect_connector(self.connector(&Default::default())))
+            .http_connector(expect_connector(
+                "The STS features of aws-config",
+                self.connector(&Default::default()),
+            ))
             .retry_config(RetryConfig::standard())
             .region(self.region())
             .time_source(self.time_source());

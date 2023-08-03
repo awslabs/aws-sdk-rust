@@ -10,7 +10,10 @@ impl SynthesizeSpeechInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError, ::aws_smithy_http::operation::Response>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::synthesize_speech::SynthesizeSpeechError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.synthesize_speech();
         fluent_builder.inner = self;
@@ -24,6 +27,7 @@ impl SynthesizeSpeechInputBuilder {
 pub struct SynthesizeSpeechFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl SynthesizeSpeechFluentBuilder {
     /// Creates a new `SynthesizeSpeech`.
@@ -31,50 +35,48 @@ impl SynthesizeSpeechFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the SynthesizeSpeech as a reference.
     pub fn as_input(&self) -> &crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::synthesize_speech::SynthesizeSpeech,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
         crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::synthesize_speech::SynthesizeSpeechError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::synthesize_speech::SynthesizeSpeech::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::synthesize_speech::SynthesizeSpeech::orchestrate(&runtime_plugins, input).await
+    }
+
+    #[doc(hidden)]
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
+        self,
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::synthesize_speech::SynthesizeSpeechOutput,
+        crate::operation::synthesize_speech::SynthesizeSpeechError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -88,23 +90,36 @@ impl SynthesizeSpeechFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::synthesize_speech::SynthesizeSpeechError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        self.send_middleware().await
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::synthesize_speech::SynthesizeSpeech,
-            ::aws_http::retry::AwsResponseRetryClassifier,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::synthesize_speech::SynthesizeSpeechOutput,
+            crate::operation::synthesize_speech::SynthesizeSpeechError,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     ///
     /// Creates a presigned request for this operation.
@@ -121,10 +136,51 @@ impl SynthesizeSpeechFluentBuilder {
         presigning_config: crate::presigning::PresigningConfig,
     ) -> ::std::result::Result<
         crate::presigning::PresignedRequest,
-        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError, ::aws_smithy_http::operation::Response>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::synthesize_speech::SynthesizeSpeechError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
+        #[derive(::std::fmt::Debug)]
+        struct AlternatePresigningSerializerRuntimePlugin;
+        impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AlternatePresigningSerializerRuntimePlugin {
+            fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
+                use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
+                let mut cfg = ::aws_smithy_types::config_bag::Layer::new("presigning_serializer");
+                cfg.set_request_serializer(::aws_smithy_runtime_api::client::orchestrator::SharedRequestSerializer::new(
+                    crate::operation::synthesize_speech::SynthesizeSpeechPresigningRequestSerializer,
+                ));
+                ::std::option::Option::Some(cfg.freeze())
+            }
+        }
+
+        let runtime_plugins = crate::operation::synthesize_speech::SynthesizeSpeech::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        )
+        .with_client_plugin(crate::presigning_interceptors::SigV4PresigningRuntimePlugin::new(
+            presigning_config,
+            ::aws_sigv4::http_request::SignableBody::Bytes(b""),
+        ))
+        .with_operation_plugin(AlternatePresigningSerializerRuntimePlugin);
+
         let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        input.presigned(&self.handle.conf, presigning_config).await
+        let mut context = crate::operation::synthesize_speech::SynthesizeSpeech::orchestrate_with_stop_point(
+            &runtime_plugins,
+            input,
+            ::aws_smithy_runtime::client::orchestrator::StopPoint::BeforeTransmit,
+        )
+        .await
+        .map_err(|err| {
+            err.map_service_error(|err| {
+                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::synthesize_speech::SynthesizeSpeechError>::assume_from(err.into())
+                    .expect("correct error type")
+                    .unwrap()
+            })
+        })?;
+        let request = context.take_request().expect("request set before transmit");
+        Ok(crate::presigning::PresignedRequest::new(request.map(|_| ())))
     }
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p> <b>NTTS-only voices</b> </p>

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#[cfg(aws_sdk_orchestrator_mode)]
+#[cfg(not(aws_sdk_middleware_mode))]
 mod test {
     use aws_sdk_dynamodb::config::{Credentials, Region, SharedAsyncSleep};
     use aws_sdk_dynamodb::{config::retry::RetryConfig, error::ProvideErrorMetadata};

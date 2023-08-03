@@ -19,6 +19,11 @@ impl SetDataRetrievalPolicyInput {
         self.policy.as_ref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for SetDataRetrievalPolicyInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl SetDataRetrievalPolicyInput {
     /// Creates a new builder-style object to manufacture [`SetDataRetrievalPolicyInput`](crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput).
     pub fn builder() -> crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder {

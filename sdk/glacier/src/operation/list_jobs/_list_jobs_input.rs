@@ -43,6 +43,11 @@ impl ListJobsInput {
         self.completed.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for ListJobsInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl ListJobsInput {
     /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
     pub fn builder() -> crate::operation::list_jobs::builders::ListJobsInputBuilder {

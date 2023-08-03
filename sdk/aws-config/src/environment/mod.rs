@@ -8,7 +8,6 @@
 /// Load app name from the environment
 pub mod app_name;
 
-pub use app_name::EnvironmentVariableAppNameProvider;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 

@@ -17,7 +17,7 @@ pub fn de_accept_reserved_instances_exchange_quote_http_error(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_accept_reserved_instances_exchange_quote_http_response_with_props(
+pub fn de_accept_reserved_instances_exchange_quote_http_response(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],

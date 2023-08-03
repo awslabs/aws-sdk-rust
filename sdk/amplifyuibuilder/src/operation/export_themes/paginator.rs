@@ -47,13 +47,20 @@ impl ExportThemesPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::export_themes::ExportThemesOutput,
-            ::aws_smithy_http::result::SdkError<crate::operation::export_themes::ExportThemesError>,
+            ::aws_smithy_http::result::SdkError<
+                crate::operation::export_themes::ExportThemesError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
         let builder = self.builder;
         let handle = self.handle;
-
+        let runtime_plugins = crate::operation::export_themes::ExportThemes::operation_runtime_plugins(
+            handle.runtime_plugins.clone(),
+            &handle.conf,
+            ::std::option::Option::None,
+        );
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
@@ -65,20 +72,7 @@ impl ExportThemesPaginator {
                     }
                 };
                 loop {
-                    let resp = {
-                        let op = match input
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                        {
-                            ::std::result::Result::Ok(op) => op,
-                            ::std::result::Result::Err(e) => {
-                                let _ = tx.send(::std::result::Result::Err(e)).await;
-                                return;
-                            }
-                        };
-                        handle.client.call(op).await
-                    };
+                    let resp = crate::operation::export_themes::ExportThemes::orchestrate(&runtime_plugins, input.clone()).await;
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
@@ -120,7 +114,13 @@ impl ExportThemesPaginatorItems {
     pub fn send(
         self,
     ) -> impl ::tokio_stream::Stream<
-        Item = ::std::result::Result<crate::types::Theme, ::aws_smithy_http::result::SdkError<crate::operation::export_themes::ExportThemesError>>,
+        Item = ::std::result::Result<
+            crate::types::Theme,
+            ::aws_smithy_http::result::SdkError<
+                crate::operation::export_themes::ExportThemesError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send())
             .flat_map(|page| crate::lens::lens_export_themes_output_entities(page).unwrap_or_default().into_iter())

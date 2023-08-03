@@ -164,9 +164,6 @@ pub mod client;
 /// Configuration for Managed Streaming for Kafka Connect.
 pub mod config;
 
-/// Endpoint resolution functionality.
-pub mod endpoint;
-
 /// Common errors and error handling utilities.
 pub mod error;
 
@@ -184,15 +181,11 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
-///
-pub mod middleware;
+pub(crate) mod protocol_serde;
 
-///
-mod no_credentials;
+mod serialization_settings;
 
 mod lens;
-
-pub(crate) mod protocol_serde;
 
 mod endpoint_lib;
 

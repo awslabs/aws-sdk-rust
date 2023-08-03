@@ -12,6 +12,11 @@ impl ListProvisionedCapacityInput {
         self.account_id.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for ListProvisionedCapacityInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl ListProvisionedCapacityInput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedCapacityInput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput).
     pub fn builder() -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder {

@@ -34,7 +34,7 @@ macro_rules! attr_obj {
 }
 
 fn do_bench(_config: &Config, _input: &PutItemInput) {
-    #[cfg(not(aws_sdk_orchestrator_mode))]
+    #[cfg(aws_sdk_middleware_mode)]
     {
         use futures_util::FutureExt;
 

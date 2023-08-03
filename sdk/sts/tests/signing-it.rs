@@ -25,7 +25,7 @@ async fn assume_role_signed() {
 }
 
 // TODO(enableNewSmithyRuntimeCleanup): Delete the middleware version of this test
-#[cfg(not(aws_sdk_orchestrator_mode))]
+#[cfg(aws_sdk_middleware_mode)]
 #[tokio::test]
 async fn web_identity_unsigned() {
     let creds = Credentials::for_tests();
@@ -44,7 +44,7 @@ async fn web_identity_unsigned() {
     );
 }
 
-#[cfg(aws_sdk_orchestrator_mode)]
+#[cfg(not(aws_sdk_middleware_mode))]
 #[tokio::test]
 async fn web_identity_unsigned() {
     let (server, request) = capture_request(None);

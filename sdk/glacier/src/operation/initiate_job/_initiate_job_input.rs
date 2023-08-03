@@ -25,6 +25,11 @@ impl InitiateJobInput {
         self.job_parameters.as_ref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for InitiateJobInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl InitiateJobInput {
     /// Creates a new builder-style object to manufacture [`InitiateJobInput`](crate::operation::initiate_job::InitiateJobInput).
     pub fn builder() -> crate::operation::initiate_job::builders::InitiateJobInputBuilder {

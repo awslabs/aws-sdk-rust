@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#[cfg(aws_sdk_orchestrator_mode)]
+#[cfg(not(aws_sdk_middleware_mode))]
 #[tokio::test]
 async fn test_config_to_builder() {
     use aws_sdk_s3::config::AppName;

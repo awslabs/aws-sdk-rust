@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#[cfg(not(aws_sdk_orchestrator_mode))]
+#[cfg(aws_sdk_middleware_mode)]
 mod middleware_mode_tests {
     use aws_http::retry::AwsResponseRetryClassifier;
     use aws_sdk_kms as kms;
@@ -66,7 +66,7 @@ mod middleware_mode_tests {
     }
 }
 
-#[cfg(aws_sdk_orchestrator_mode)]
+#[cfg(not(aws_sdk_middleware_mode))]
 mod orchestrator_mode_tests {
     use aws_credential_types::Credentials;
     use aws_runtime::retries::classifier::AwsErrorCodeClassifier;

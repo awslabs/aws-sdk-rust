@@ -25,6 +25,11 @@ impl AddTagsToVaultInput {
         self.tags.as_ref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for AddTagsToVaultInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl AddTagsToVaultInput {
     /// Creates a new builder-style object to manufacture [`AddTagsToVaultInput`](crate::operation::add_tags_to_vault::AddTagsToVaultInput).
     pub fn builder() -> crate::operation::add_tags_to_vault::builders::AddTagsToVaultInputBuilder {

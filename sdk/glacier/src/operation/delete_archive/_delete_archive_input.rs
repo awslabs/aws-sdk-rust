@@ -25,6 +25,11 @@ impl DeleteArchiveInput {
         self.archive_id.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for DeleteArchiveInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl DeleteArchiveInput {
     /// Creates a new builder-style object to manufacture [`DeleteArchiveInput`](crate::operation::delete_archive::DeleteArchiveInput).
     pub fn builder() -> crate::operation::delete_archive::builders::DeleteArchiveInputBuilder {

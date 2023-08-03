@@ -10,7 +10,7 @@ impl GetUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_user::GetUserOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError, ::aws_smithy_http::operation::Response>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
     > {
         let mut fluent_builder = client.get_user();
         fluent_builder.inner = self;
@@ -25,6 +25,7 @@ impl GetUserInputBuilder {
 pub struct GetUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_user::builders::GetUserInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl GetUserFluentBuilder {
     /// Creates a new `GetUser`.
@@ -32,45 +33,45 @@ impl GetUserFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the GetUser as a reference.
     pub fn as_input(&self) -> &crate::operation::get_user::builders::GetUserInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::get_user::GetUser, ::aws_http::retry::AwsResponseRetryClassifier>,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError>,
+        crate::operation::get_user::GetUserOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
     > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::get_user::GetUser::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::get_user::GetUser::orchestrate(&runtime_plugins, input).await
     }
 
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn send_middleware(
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
         self,
-    ) -> ::std::result::Result<crate::operation::get_user::GetUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError>>
-    {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::get_user::GetUserOutput,
+        crate::operation::get_user::GetUserError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -82,20 +83,35 @@ impl GetUserFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<crate::operation::get_user::GetUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError>>
-    {
-        self.send_middleware().await
+    ) -> ::std::result::Result<
+        crate::operation::get_user::GetUserOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+    > {
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::get_user::GetUser, ::aws_http::retry::AwsResponseRetryClassifier>,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::get_user::GetUserOutput,
+            crate::operation::get_user::GetUserError,
+        >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_user::GetUserError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     /// <p>The name of the user to get information about.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to the user making the request. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>

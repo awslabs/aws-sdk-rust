@@ -20,7 +20,7 @@ use aws_smithy_types::timeout::TimeoutConfig;
 use std::fmt::Debug;
 use std::time::{Duration, Instant};
 
-#[cfg(aws_sdk_orchestrator_mode)]
+#[cfg(not(aws_sdk_middleware_mode))]
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
 
 #[derive(Debug)]
@@ -36,7 +36,7 @@ impl AsyncSleep for SmolSleep {
 
 #[test]
 fn test_smol_runtime_timeouts() {
-    #[cfg(aws_sdk_orchestrator_mode)]
+    #[cfg(not(aws_sdk_middleware_mode))]
     let _guard = capture_test_logs();
 
     if let Err(err) = smol::block_on(async { timeout_test(SharedAsyncSleep::new(SmolSleep)).await })
@@ -48,7 +48,7 @@ fn test_smol_runtime_timeouts() {
 
 #[test]
 fn test_smol_runtime_retry() {
-    #[cfg(aws_sdk_orchestrator_mode)]
+    #[cfg(not(aws_sdk_middleware_mode))]
     let _guard = capture_test_logs();
 
     if let Err(err) = smol::block_on(async { retry_test(SharedAsyncSleep::new(SmolSleep)).await }) {
@@ -68,7 +68,7 @@ impl AsyncSleep for AsyncStdSleep {
 
 #[test]
 fn test_async_std_runtime_timeouts() {
-    #[cfg(aws_sdk_orchestrator_mode)]
+    #[cfg(not(aws_sdk_middleware_mode))]
     let _guard = capture_test_logs();
 
     if let Err(err) = async_std::task::block_on(async {
@@ -81,7 +81,7 @@ fn test_async_std_runtime_timeouts() {
 
 #[test]
 fn test_async_std_runtime_retry() {
-    #[cfg(aws_sdk_orchestrator_mode)]
+    #[cfg(not(aws_sdk_middleware_mode))]
     let _guard = capture_test_logs();
 
     if let Err(err) =

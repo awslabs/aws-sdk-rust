@@ -43,6 +43,11 @@ impl UploadMultipartPartInput {
         &self.body
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for UploadMultipartPartInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl UploadMultipartPartInput {
     /// Creates a new builder-style object to manufacture [`UploadMultipartPartInput`](crate::operation::upload_multipart_part::UploadMultipartPartInput).
     pub fn builder() -> crate::operation::upload_multipart_part::builders::UploadMultipartPartInputBuilder {

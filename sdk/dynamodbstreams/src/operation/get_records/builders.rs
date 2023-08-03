@@ -10,7 +10,10 @@ impl GetRecordsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_records::GetRecordsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_records::GetRecordsError, ::aws_smithy_http::operation::Response>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_records::GetRecordsError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.get_records();
         fluent_builder.inner = self;
@@ -27,6 +30,7 @@ impl GetRecordsInputBuilder {
 pub struct GetRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_records::builders::GetRecordsInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl GetRecordsFluentBuilder {
     /// Creates a new `GetRecords`.
@@ -34,47 +38,48 @@ impl GetRecordsFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the GetRecords as a reference.
     pub fn as_input(&self) -> &crate::operation::get_records::builders::GetRecordsInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::get_records::GetRecords, ::aws_http::retry::AwsResponseRetryClassifier>,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_records::GetRecordsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
         crate::operation::get_records::GetRecordsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_records::GetRecordsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_records::GetRecordsError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::get_records::GetRecords::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::get_records::GetRecords::orchestrate(&runtime_plugins, input).await
+    }
+
+    #[doc(hidden)]
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
+        self,
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::get_records::GetRecordsOutput,
+        crate::operation::get_records::GetRecordsError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -88,20 +93,36 @@ impl GetRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_records::GetRecordsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_records::GetRecordsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_records::GetRecordsError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        self.send_middleware().await
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::get_records::GetRecords, ::aws_http::retry::AwsResponseRetryClassifier>,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::get_records::GetRecordsOutput,
+            crate::operation::get_records::GetRecordsError,
+        >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_records::GetRecordsError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
     pub fn shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

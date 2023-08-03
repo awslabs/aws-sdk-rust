@@ -174,9 +174,6 @@ pub mod client;
 /// Configuration for Amazon Route 53.
 pub mod config;
 
-/// Endpoint resolution functionality.
-pub mod endpoint;
-
 /// Common errors and error handling utilities.
 pub mod error;
 
@@ -194,18 +191,14 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
-///
-pub mod middleware;
+pub(crate) mod protocol_serde;
 
 ///
-mod no_credentials;
+mod route53_resource_id_preprocessor;
 
-///
-mod route53_resource_id_preprocessor_middleware;
+mod serialization_settings;
 
 mod lens;
-
-pub(crate) mod protocol_serde;
 
 mod endpoint_lib;
 

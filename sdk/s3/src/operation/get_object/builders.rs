@@ -10,7 +10,10 @@ impl GetObjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_object::GetObjectOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError, ::aws_smithy_http::operation::Response>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object::GetObjectError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.get_object();
         fluent_builder.inner = self;
@@ -89,6 +92,7 @@ impl GetObjectInputBuilder {
 pub struct GetObjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_object::builders::GetObjectInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl GetObjectFluentBuilder {
     /// Creates a new `GetObject`.
@@ -96,47 +100,48 @@ impl GetObjectFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the GetObject as a reference.
     pub fn as_input(&self) -> &crate::operation::get_object::builders::GetObjectInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::get_object::GetObject, ::aws_http::retry::AwsResponseRetryClassifier>,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
         crate::operation::get_object::GetObjectOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object::GetObjectError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::get_object::GetObject::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::get_object::GetObject::orchestrate(&runtime_plugins, input).await
+    }
+
+    #[doc(hidden)]
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
+        self,
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::get_object::GetObjectOutput,
+        crate::operation::get_object::GetObjectError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -150,20 +155,36 @@ impl GetObjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_object::GetObjectOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object::GetObjectError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        self.send_middleware().await
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::get_object::GetObject, ::aws_http::retry::AwsResponseRetryClassifier>,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::get_object::GetObjectOutput,
+            crate::operation::get_object::GetObjectError,
+        >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     ///
     /// Creates a presigned request for this operation.
@@ -180,10 +201,37 @@ impl GetObjectFluentBuilder {
         presigning_config: crate::presigning::PresigningConfig,
     ) -> ::std::result::Result<
         crate::presigning::PresignedRequest,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError, ::aws_smithy_http::operation::Response>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object::GetObjectError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
+        let runtime_plugins = crate::operation::get_object::GetObject::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        )
+        .with_client_plugin(crate::presigning_interceptors::SigV4PresigningRuntimePlugin::new(
+            presigning_config,
+            ::aws_sigv4::http_request::SignableBody::UnsignedPayload,
+        ));
+
         let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        input.presigned(&self.handle.conf, presigning_config).await
+        let mut context = crate::operation::get_object::GetObject::orchestrate_with_stop_point(
+            &runtime_plugins,
+            input,
+            ::aws_smithy_runtime::client::orchestrator::StopPoint::BeforeTransmit,
+        )
+        .await
+        .map_err(|err| {
+            err.map_service_error(|err| {
+                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::get_object::GetObjectError>::assume_from(err.into())
+                    .expect("correct error type")
+                    .unwrap()
+            })
+        })?;
+        let request = context.take_request().expect("request set before transmit");
+        Ok(crate::presigning::PresignedRequest::new(request.map(|_| ())))
     }
     /// <p>The bucket name containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>

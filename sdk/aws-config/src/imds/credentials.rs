@@ -201,7 +201,7 @@ impl ImdsCredentialsProvider {
             return expiration;
         }
 
-        let rng = fastrand::Rng::with_seed(
+        let mut rng = fastrand::Rng::with_seed(
             now.duration_since(SystemTime::UNIX_EPOCH)
                 .expect("now should be after UNIX EPOCH")
                 .as_secs(),

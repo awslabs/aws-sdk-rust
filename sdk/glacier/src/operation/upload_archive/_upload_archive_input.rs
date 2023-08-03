@@ -37,6 +37,11 @@ impl UploadArchiveInput {
         &self.body
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for UploadArchiveInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl UploadArchiveInput {
     /// Creates a new builder-style object to manufacture [`UploadArchiveInput`](crate::operation::upload_archive::UploadArchiveInput).
     pub fn builder() -> crate::operation::upload_archive::builders::UploadArchiveInputBuilder {

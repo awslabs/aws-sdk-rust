@@ -13,6 +13,11 @@ impl GetDataRetrievalPolicyInput {
         self.account_id.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for GetDataRetrievalPolicyInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl GetDataRetrievalPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetDataRetrievalPolicyInput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput).
     pub fn builder() -> crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyInputBuilder {

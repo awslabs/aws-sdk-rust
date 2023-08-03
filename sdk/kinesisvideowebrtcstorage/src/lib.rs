@@ -164,9 +164,6 @@ pub mod client;
 /// Configuration for Amazon Kinesis Video WebRTC Storage.
 pub mod config;
 
-/// Endpoint resolution functionality.
-pub mod endpoint;
-
 /// Common errors and error handling utilities.
 pub mod error;
 
@@ -181,16 +178,12 @@ pub mod operation;
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
 
-///
-pub mod middleware;
+pub(crate) mod protocol_serde;
 
-///
-mod no_credentials;
+mod serialization_settings;
 
 /// Data structures used by operation inputs/outputs.
 pub mod types;
-
-pub(crate) mod protocol_serde;
 
 mod endpoint_lib;
 

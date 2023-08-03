@@ -12,7 +12,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
         crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput,
         ::aws_smithy_http::result::SdkError<
             crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError,
-            ::aws_smithy_http::operation::Response,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
         let mut fluent_builder = client.start_fraudster_registration_job();
@@ -27,6 +27,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
 pub struct StartFraudsterRegistrationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl StartFraudsterRegistrationJobFluentBuilder {
     /// Creates a new `StartFraudsterRegistrationJob`.
@@ -34,50 +35,48 @@ impl StartFraudsterRegistrationJobFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the StartFraudsterRegistrationJob as a reference.
     pub fn as_input(&self) -> &crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJob::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJob::orchestrate(&runtime_plugins, input).await
+    }
+
+    #[doc(hidden)]
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
+        self,
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput,
+        crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -91,23 +90,36 @@ impl StartFraudsterRegistrationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        self.send_middleware().await
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput,
+            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

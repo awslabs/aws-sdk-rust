@@ -764,7 +764,7 @@ mod loader {
             assert_eq!(Some(&app_name), conf.app_name());
         }
 
-        #[cfg(aws_sdk_orchestrator_mode)]
+        #[cfg(all(not(aws_sdk_middleware_mode), feature = "rustls"))]
         #[tokio::test]
         async fn disable_default_credentials() {
             let config = from_env().no_credentials().load().await;

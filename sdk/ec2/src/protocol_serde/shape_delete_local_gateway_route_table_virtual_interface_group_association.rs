@@ -9,7 +9,7 @@ pub fn de_delete_local_gateway_route_table_virtual_interface_group_association_h
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_local_gateway_route_table_virtual_interface_group_association_http_response_with_props(_response_status: u16, _response_headers: &::http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput, crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError>{
+pub fn de_delete_local_gateway_route_table_virtual_interface_group_association_http_response(_response_status: u16, _response_headers: &::http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput, crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder::default();

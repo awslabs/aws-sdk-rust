@@ -167,9 +167,6 @@ pub mod client;
 /// Configuration for Amazon Simple Storage Service.
 pub mod config;
 
-/// Endpoint resolution functionality.
-pub mod endpoint;
-
 /// Common errors and error handling utilities.
 pub mod error;
 
@@ -188,32 +185,31 @@ pub mod primitives;
 pub mod types;
 
 ///
-pub(crate) mod http_body_checksum_middleware;
+pub(crate) mod http_request_checksum;
 
 ///
-pub mod middleware;
-
-///
-mod no_credentials;
+pub(crate) mod http_response_checksum;
 
 ///
 pub mod presigning;
 
 ///
-pub(crate) mod presigning_service;
+pub(crate) mod presigning_interceptors;
+
+pub(crate) mod protocol_serde;
 
 ///
 mod s3_request_id;
 
-mod lens;
+mod serialization_settings;
 
-pub(crate) mod protocol_serde;
+mod lens;
 
 mod endpoint_lib;
 
-mod rest_xml_unwrapped_errors;
-
 mod event_stream_serde;
+
+mod rest_xml_unwrapped_errors;
 
 #[doc(inline)]
 pub use client::Client;

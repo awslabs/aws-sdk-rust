@@ -23,7 +23,7 @@ credentials-sso = ["dep:aws-sdk-sso", "dep:ring", "dep:hex", "dep:zeroize"]
 default = ["client-hyper", "rustls", "rt-tokio", "credentials-sso"]
 
 [dependencies]
-fastrand = "1"
+fastrand = "2.0.0"
 bytes = "1.1.0"
 http = "0.2.4"
 

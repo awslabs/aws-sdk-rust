@@ -37,6 +37,11 @@ impl ListPartsInput {
         self.limit
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for ListPartsInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl ListPartsInput {
     /// Creates a new builder-style object to manufacture [`ListPartsInput`](crate::operation::list_parts::ListPartsInput).
     pub fn builder() -> crate::operation::list_parts::builders::ListPartsInputBuilder {

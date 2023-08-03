@@ -31,7 +31,8 @@ use aws_sdk_timestreamwrite as timestreamwrite;
 #[::tokio::main]
 async fn main() -> Result<(), timestreamwrite::Error> {
     let config = aws_config::load_from_env().await;
-    let client = aws_sdk_timestreamwrite::Client::new(&config);
+    // You MUST call `with_endpoint_discovery_enabled` to produce a working client for this service.
+    let client = aws_sdk_timestreamwrite::Client::new(&config).with_endpoint_discovery_enabled().await;
 
     // ... make some calls with the client
 

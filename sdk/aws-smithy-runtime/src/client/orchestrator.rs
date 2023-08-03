@@ -335,7 +335,8 @@ async fn try_attempt(
         let request = ctx.take_request().expect("set during serialization");
         trace!(request = ?request, "transmitting request");
         let connector = halt_on_err!([ctx] => runtime_components.connector().ok_or_else(||
-            OrchestratorError::other("a connector is required to send requests")
+            OrchestratorError::other("No HTTP connector was available to send this request. \
+                Enable the `rustls` crate feature or set a connector to fix this.")
         ));
         connector.call(request).await.map_err(|err| {
             match err.downcast() {

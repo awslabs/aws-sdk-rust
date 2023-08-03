@@ -7,10 +7,13 @@
 
 use aws_smithy_client::erase::DynConnector;
 
-// unused when all crate features are disabled
 /// Unwrap an [`Option<DynConnector>`](aws_smithy_client::erase::DynConnector), and panic with a helpful error message if it's `None`
-pub(crate) fn expect_connector(connector: Option<DynConnector>) -> DynConnector {
-    connector.expect("No HTTP connector was available. Enable the `rustls` crate feature or set a connector to fix this.")
+pub(crate) fn expect_connector(for_what: &str, connector: Option<DynConnector>) -> DynConnector {
+    if let Some(conn) = connector {
+        conn
+    } else {
+        panic!("{for_what} require(s) a HTTP connector, but none was available. Enable the `rustls` crate feature or set a connector to fix this.")
+    }
 }
 
 #[cfg(feature = "client-hyper")]

@@ -98,7 +98,34 @@ impl<T: fmt::Debug + Send + Sync + 'static> DerefMut for TypedBox<T> {
     }
 }
 
-/// A new-type around `Box<dyn Debug + Send + Sync>`
+/// Abstraction over `Box<dyn T + Send + Sync>` that provides `Debug` and optionally `Clone`.
+///
+/// # Examples
+///
+/// Creating a box:
+/// ```no_run
+/// use aws_smithy_types::type_erasure::{TypedBox, TypeErasedBox};
+///
+/// // Creating it directly:
+/// let boxed = TypeErasedBox::new("some value");
+///
+/// // Creating it from a `TypedBox`:
+/// let boxed = TypedBox::new("some value").erase();
+/// ```
+///
+/// Downcasting a box:
+/// ```no_run
+/// # use aws_smithy_types::type_erasure::{TypedBox, TypeErasedBox};
+/// # let boxed = TypedBox::new("some value".to_string()).erase();
+/// let value: Option<&String> = boxed.downcast_ref::<String>();
+/// ```
+///
+/// Converting a box back into its value:
+/// ```
+/// # use aws_smithy_types::type_erasure::{TypedBox, TypeErasedBox};
+/// let boxed = TypedBox::new("some value".to_string()).erase();
+/// let value: String = TypedBox::<String>::assume_from(boxed).expect("it is a string").unwrap();
+/// ```
 pub struct TypeErasedBox {
     field: Box<dyn Any + Send + Sync>,
     #[allow(clippy::type_complexity)]
@@ -146,6 +173,7 @@ impl TypeErasedBox {
         }
     }
 
+    /// Create a new cloneable `TypeErasedBox` from the given `value`.
     pub fn new_with_clone<T: Send + Sync + Clone + fmt::Debug + 'static>(value: T) -> Self {
         let debug = |value: &Box<dyn Any + Send + Sync>, f: &mut fmt::Formatter<'_>| {
             fmt::Debug::fmt(value.downcast_ref::<T>().expect("type-checked"), f)
@@ -160,6 +188,9 @@ impl TypeErasedBox {
         }
     }
 
+    /// Attempts to clone this box.
+    ///
+    /// Note: this will only ever succeed if the box was created with [`TypeErasedBox::new_with_clone`].
     pub fn try_clone(&self) -> Option<Self> {
         Some((self.clone.as_ref()?)(&self.field))
     }

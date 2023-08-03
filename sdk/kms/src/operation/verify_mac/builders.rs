@@ -10,7 +10,10 @@ impl VerifyMacInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::verify_mac::VerifyMacOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError, ::aws_smithy_http::operation::Response>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_mac::VerifyMacError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.verify_mac();
         fluent_builder.inner = self;
@@ -30,6 +33,7 @@ impl VerifyMacInputBuilder {
 pub struct VerifyMacFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::verify_mac::builders::VerifyMacInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl VerifyMacFluentBuilder {
     /// Creates a new `VerifyMac`.
@@ -37,47 +41,48 @@ impl VerifyMacFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the VerifyMac as a reference.
     pub fn as_input(&self) -> &crate::operation::verify_mac::builders::VerifyMacInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::verify_mac::VerifyMac, ::aws_http::retry::AwsResponseRetryClassifier>,
-        ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_mac::VerifyMacOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_mac::VerifyMacError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::verify_mac::VerifyMac::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::verify_mac::VerifyMac::orchestrate(&runtime_plugins, input).await
+    }
+
+    #[doc(hidden)]
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
+        self,
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::verify_mac::VerifyMacOutput,
+        crate::operation::verify_mac::VerifyMacError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -91,20 +96,36 @@ impl VerifyMacFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_mac::VerifyMacOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_mac::VerifyMacError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        self.send_middleware().await
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::verify_mac::VerifyMac, ::aws_http::retry::AwsResponseRetryClassifier>,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::verify_mac::VerifyMacOutput,
+            crate::operation::verify_mac::VerifyMacError,
+        >,
         ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     /// <p>The message that will be used in the verification. Enter the same message that was used to generate the HMAC.</p>
     /// <p> <code>GenerateMac</code> and <code>VerifyMac</code> do not provide special handling for message digests. If you generated an HMAC for a hash digest of a message, you must verify the HMAC for the same hash digest.</p>

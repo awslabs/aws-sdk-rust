@@ -172,9 +172,6 @@ pub mod client;
 /// Configuration for Amazon Transcribe Streaming Service.
 pub mod config;
 
-/// Endpoint resolution functionality.
-pub mod endpoint;
-
 /// Common errors and error handling utilities.
 pub mod error;
 
@@ -194,13 +191,9 @@ pub mod types;
 
 mod event_stream_serde;
 
-///
-pub mod middleware;
-
-///
-mod no_credentials;
-
 pub(crate) mod protocol_serde;
+
+mod serialization_settings;
 
 mod endpoint_lib;
 

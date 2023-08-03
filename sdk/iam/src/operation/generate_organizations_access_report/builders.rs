@@ -12,7 +12,7 @@ impl GenerateOrganizationsAccessReportInputBuilder {
         crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput,
         ::aws_smithy_http::result::SdkError<
             crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError,
-            ::aws_smithy_http::operation::Response,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
         let mut fluent_builder = client.generate_organizations_access_report();
@@ -51,6 +51,7 @@ impl GenerateOrganizationsAccessReportInputBuilder {
 pub struct GenerateOrganizationsAccessReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::generate_organizations_access_report::builders::GenerateOrganizationsAccessReportInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl GenerateOrganizationsAccessReportFluentBuilder {
     /// Creates a new `GenerateOrganizationsAccessReport`.
@@ -58,50 +59,48 @@ impl GenerateOrganizationsAccessReportFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the GenerateOrganizationsAccessReport as a reference.
     pub fn as_input(&self) -> &crate::operation::generate_organizations_access_report::builders::GenerateOrganizationsAccessReportInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReport::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReport::orchestrate(&runtime_plugins, input).await
+    }
+
+    #[doc(hidden)]
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
+        self,
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput,
+        crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -115,23 +114,36 @@ impl GenerateOrganizationsAccessReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        self.send_middleware().await
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput,
+            crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path using the known structure of your organization. For example, assume that your account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
     pub fn entity_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -33,6 +33,11 @@ impl InitiateMultipartUploadInput {
         self.part_size.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for InitiateMultipartUploadInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl InitiateMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`InitiateMultipartUploadInput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput).
     pub fn builder() -> crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder {

@@ -10,7 +10,7 @@ impl TagUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::tag_user::TagUserOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError, ::aws_smithy_http::operation::Response>,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
     > {
         let mut fluent_builder = client.tag_user();
         fluent_builder.inner = self;
@@ -36,6 +36,7 @@ impl TagUserInputBuilder {
 pub struct TagUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::tag_user::builders::TagUserInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl TagUserFluentBuilder {
     /// Creates a new `TagUser`.
@@ -43,45 +44,45 @@ impl TagUserFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the TagUser as a reference.
     pub fn as_input(&self) -> &crate::operation::tag_user::builders::TagUserInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::tag_user::TagUser, ::aws_http::retry::AwsResponseRetryClassifier>,
-        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>,
+        crate::operation::tag_user::TagUserOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
     > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::tag_user::TagUser::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::tag_user::TagUser::orchestrate(&runtime_plugins, input).await
     }
 
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn send_middleware(
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
         self,
-    ) -> ::std::result::Result<crate::operation::tag_user::TagUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>>
-    {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::tag_user::TagUserOutput,
+        crate::operation::tag_user::TagUserError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -93,20 +94,35 @@ impl TagUserFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<crate::operation::tag_user::TagUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>>
-    {
-        self.send_middleware().await
+    ) -> ::std::result::Result<
+        crate::operation::tag_user::TagUserOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+    > {
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<crate::operation::tag_user::TagUser, ::aws_http::retry::AwsResponseRetryClassifier>,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::tag_user::TagUserOutput,
+            crate::operation::tag_user::TagUserError,
+        >,
         ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     /// <p>The name of the IAM user to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>

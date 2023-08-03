@@ -26,6 +26,11 @@ impl AbortMultipartUploadInput {
         self.upload_id.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for AbortMultipartUploadInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl AbortMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
     pub fn builder() -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadInputBuilder {

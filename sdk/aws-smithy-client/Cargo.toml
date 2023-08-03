@@ -27,7 +27,7 @@ hyper-webpki-doctest-only = ["dep:hyper-rustls", "hyper-rustls?/webpki-roots"]
 
 [dependencies]
 bytes = "1"
-fastrand = "1.4.0"
+fastrand = "2.0.0"
 http = "0.2.3"
 http-body = "0.4.4"
 pin-project-lite = "0.2.7"

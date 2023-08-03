@@ -80,7 +80,7 @@ pub fn de_enable_sharing_with_aws_organization_http_error(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_enable_sharing_with_aws_organization_http_response_with_props(
+pub fn de_enable_sharing_with_aws_organization_http_response(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],

@@ -19,6 +19,11 @@ impl GetVaultAccessPolicyInput {
         self.vault_name.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for GetVaultAccessPolicyInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl GetVaultAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetVaultAccessPolicyInput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput).
     pub fn builder() -> crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyInputBuilder {

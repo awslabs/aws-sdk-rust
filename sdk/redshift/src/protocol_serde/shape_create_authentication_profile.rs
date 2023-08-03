@@ -73,7 +73,7 @@ pub fn de_create_authentication_profile_http_error(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_authentication_profile_http_response_with_props(
+pub fn de_create_authentication_profile_http_response(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],

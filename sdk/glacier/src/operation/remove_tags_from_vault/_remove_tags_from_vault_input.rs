@@ -25,6 +25,11 @@ impl RemoveTagsFromVaultInput {
         self.tag_keys.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for RemoveTagsFromVaultInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl RemoveTagsFromVaultInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromVaultInput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput).
     pub fn builder() -> crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder {

@@ -25,6 +25,11 @@ impl CompleteVaultLockInput {
         self.lock_id.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for CompleteVaultLockInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl CompleteVaultLockInput {
     /// Creates a new builder-style object to manufacture [`CompleteVaultLockInput`](crate::operation::complete_vault_lock::CompleteVaultLockInput).
     pub fn builder() -> crate::operation::complete_vault_lock::builders::CompleteVaultLockInputBuilder {

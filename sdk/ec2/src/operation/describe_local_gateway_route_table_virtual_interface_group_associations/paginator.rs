@@ -50,12 +50,16 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
-                pub fn send(self) -> impl ::tokio_stream::Stream<Item = ::std::result::Result<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError>>> + ::std::marker::Unpin
+                pub fn send(self) -> impl ::tokio_stream::Stream<Item = ::std::result::Result<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>> + ::std::marker::Unpin
                  {
         // Move individual fields out of self for the borrow checker
         let builder = self.builder;
         let handle = self.handle;
-
+        let runtime_plugins = crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations::operation_runtime_plugins(
+                            handle.runtime_plugins.clone(),
+                            &handle.conf,
+                            ::std::option::Option::None,
+                        );
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
@@ -67,20 +71,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
                     }
                 };
                 loop {
-                    let resp = {
-                        let op = match input
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                        {
-                            ::std::result::Result::Ok(op) => op,
-                            ::std::result::Result::Err(e) => {
-                                let _ = tx.send(::std::result::Result::Err(e)).await;
-                                return;
-                            }
-                        };
-                        handle.client.call(op).await
-                    };
+                    let resp = crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations::orchestrate(&runtime_plugins, input.clone()).await;
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
@@ -122,7 +113,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginatorIte
     /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
     ///
     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
-                    pub fn send(self) -> impl ::tokio_stream::Stream<Item = ::std::result::Result<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError>>> + ::std::marker::Unpin
+                    pub fn send(self) -> impl ::tokio_stream::Stream<Item = ::std::result::Result<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>> + ::std::marker::Unpin
                      {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_local_gateway_route_table_virtual_interface_group_associations_output_local_gateway_route_table_virtual_interface_group_associations(page).unwrap_or_default().into_iter())
     }

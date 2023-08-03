@@ -12,7 +12,7 @@ impl GetContextKeysForPrincipalPolicyInputBuilder {
         crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput,
         ::aws_smithy_http::result::SdkError<
             crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError,
-            ::aws_smithy_http::operation::Response,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
         let mut fluent_builder = client.get_context_keys_for_principal_policy();
@@ -30,6 +30,7 @@ impl GetContextKeysForPrincipalPolicyInputBuilder {
 pub struct GetContextKeysForPrincipalPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl GetContextKeysForPrincipalPolicyFluentBuilder {
     /// Creates a new `GetContextKeysForPrincipalPolicy`.
@@ -37,50 +38,48 @@ impl GetContextKeysForPrincipalPolicyFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the GetContextKeysForPrincipalPolicy as a reference.
     pub fn as_input(&self) -> &crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
         crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicy::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicy::orchestrate(&runtime_plugins, input).await
+    }
+
+    #[doc(hidden)]
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
+        self,
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput,
+        crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -94,23 +93,36 @@ impl GetContextKeysForPrincipalPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        self.send_middleware().await
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput,
+            crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     /// <p>The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>

@@ -22,6 +22,8 @@ pub trait Store: Sized + Send + Sync + 'static {
 }
 
 /// Store an item in the config bag by replacing the existing value
+///
+/// See the [module docs](crate::config_bag) for more documentation.
 #[non_exhaustive]
 pub struct StoreReplace<U>(PhantomData<U>);
 
@@ -32,6 +34,8 @@ impl<U> Debug for StoreReplace<U> {
 }
 
 /// Store an item in the config bag by effectively appending it to a list
+///
+/// See the [module docs](crate::config_bag) for more documentation.
 #[non_exhaustive]
 pub struct StoreAppend<U>(PhantomData<U>);
 
@@ -42,6 +46,8 @@ impl<U> Debug for StoreAppend<U> {
 }
 
 /// Trait that marks the implementing types as able to be stored in the config bag
+///
+/// See the [module docs](crate::config_bag) for more documentation.
 pub trait Storable: Send + Sync + Debug + 'static {
     /// Specify how an item is stored in the config bag, e.g. [`StoreReplace`] and [`StoreAppend`]
     type Storer: Store;

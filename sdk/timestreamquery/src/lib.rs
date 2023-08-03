@@ -39,7 +39,8 @@
 //! #[::tokio::main]
 //! async fn main() -> Result<(), timestreamquery::Error> {
 //!     let config = aws_config::load_from_env().await;
-//!     let client = aws_sdk_timestreamquery::Client::new(&config);
+//!     // You MUST call `with_endpoint_discovery_enabled` to produce a working client for this service.
+//!     let client = aws_sdk_timestreamquery::Client::new(&config).with_endpoint_discovery_enabled().await;
 //!
 //!     // ... make some calls with the client
 //!
@@ -108,7 +109,8 @@ pub use config::Config;
 /// ```rust,no_run
 /// # async fn wrapper() {
 /// let config = aws_config::load_from_env().await;
-/// let client = aws_sdk_timestreamquery::Client::new(&config);
+/// // You MUST call `with_endpoint_discovery_enabled` to produce a working client for this service.
+/// let client = aws_sdk_timestreamquery::Client::new(&config).with_endpoint_discovery_enabled().await;
 /// # }
 /// ```
 ///
@@ -164,9 +166,6 @@ pub mod client;
 /// Configuration for Amazon Timestream Query.
 pub mod config;
 
-/// Endpoint resolution functionality.
-pub mod endpoint;
-
 /// Common errors and error handling utilities.
 pub mod error;
 
@@ -184,17 +183,18 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+pub(crate) mod client_idempotency_token;
+
+///
+pub mod endpoint_discovery;
+
 mod idempotency_token;
 
-///
-pub mod middleware;
+pub(crate) mod protocol_serde;
 
-///
-mod no_credentials;
+mod serialization_settings;
 
 mod lens;
-
-pub(crate) mod protocol_serde;
 
 mod endpoint_lib;
 

@@ -430,7 +430,10 @@ impl Builder {
             .read_timeout(self.read_timeout.unwrap_or(DEFAULT_READ_TIMEOUT))
             .build();
         let connector_settings = ConnectorSettings::from_timeout_config(&timeout_config);
-        let connector = expect_connector(config.connector(&connector_settings));
+        let connector = expect_connector(
+            "The IMDS credentials provider",
+            config.connector(&connector_settings),
+        );
         let endpoint_source = self
             .endpoint
             .unwrap_or_else(|| EndpointSource::Env(config.clone()));

@@ -213,7 +213,10 @@ impl AssumeRoleProviderBuilder {
             .credentials_provider(provider)
             .time_source(conf.time_source())
             .region(self.region.clone())
-            .http_connector(expect_connector(conf.connector(&Default::default())));
+            .http_connector(expect_connector(
+                "The AssumeRole credentials provider",
+                conf.connector(&Default::default()),
+            ));
         config.set_sleep_impl(conf.sleep());
 
         let session_name = self.session_name.unwrap_or_else(|| {

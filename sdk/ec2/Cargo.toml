@@ -17,16 +17,12 @@ targets = ["x86_64-unknown-linux-gnu"]
 path = "../aws-credential-types"
 version = "0.0.0-smithy-rs-head"
 
-[dependencies.aws-endpoint]
-path = "../aws-endpoint"
-version = "0.0.0-smithy-rs-head"
-
 [dependencies.aws-http]
 path = "../aws-http"
 version = "0.0.0-smithy-rs-head"
 
-[dependencies.aws-sig-auth]
-path = "../aws-sig-auth"
+[dependencies.aws-runtime]
+path = "../aws-runtime"
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-async]
@@ -41,16 +37,20 @@ version = "0.0.0-smithy-rs-head"
 path = "../aws-smithy-http"
 version = "0.0.0-smithy-rs-head"
 
-[dependencies.aws-smithy-http-tower]
-path = "../aws-smithy-http-tower"
-version = "0.0.0-smithy-rs-head"
-
 [dependencies.aws-smithy-json]
 path = "../aws-smithy-json"
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-query]
 path = "../aws-smithy-query"
+version = "0.0.0-smithy-rs-head"
+
+[dependencies.aws-smithy-runtime]
+path = "../aws-smithy-runtime"
+version = "0.0.0-smithy-rs-head"
+
+[dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-types]
@@ -65,11 +65,8 @@ version = "0.0.0-smithy-rs-head"
 path = "../aws-types"
 version = "0.0.0-smithy-rs-head"
 
-[dependencies.bytes]
-version = "1.0.0"
-
 [dependencies.fastrand]
-version = "1.8.0"
+version = "2.0.0"
 
 [dependencies.http]
 version = "0.2.9"
@@ -79,9 +76,6 @@ version = "1.5.5"
 
 [dependencies.tokio-stream]
 version = "0.1.7"
-
-[dependencies.tower]
-version = "0.4"
 
 [dependencies.tracing]
 version = "0.1"
@@ -108,6 +102,16 @@ version = "0.0.0-smithy-rs-head"
 path = "../aws-smithy-protocol-test"
 version = "0.0.0-smithy-rs-head"
 
+[dev-dependencies.aws-smithy-runtime]
+path = "../aws-smithy-runtime"
+features = ["test-util"]
+version = "0.0.0-smithy-rs-head"
+
+[dev-dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
+features = ["test-util"]
+version = "0.0.0-smithy-rs-head"
+
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["test-util"]
@@ -131,5 +135,5 @@ features = ["env-filter", "json"]
 [features]
 rustls = ["aws-smithy-client/rustls"]
 rt-tokio = ["aws-smithy-http/rt-tokio"]
-test-util = ["aws-credential-types/test-util"]
+test-util = ["aws-credential-types/test-util", "aws-smithy-runtime/test-util"]
 default = ["rustls", "rt-tokio"]

@@ -3,12 +3,133 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//! Layered Configuration Bag Structure
+//! Layers and layered bags of configuration data.
 //!
-//! [`config_bag::ConfigBag`] represents the layered configuration structure
-//! with the following properties:
-//! 1. A new layer of configuration may be applied onto an existing configuration structure without modifying it or taking ownership.
-//! 2. No lifetime shenanigans to deal with
+//! The [`ConfigBag`](crate::config_bag::ConfigBag) structure is used to store and pass around configuration for client operations.
+//! Interacting with it may be required in order to write an `Interceptor` or `RuntimePlugin` to
+//! customize a client.
+//!
+//! A `ConfigBag` is essentially a stack of several immutable and sharable layers, with a single _mutable_ layer at
+//! the top of the stack that is called "interceptor state". The intent of this last mutable layer is to allow for
+//! more performant mutation of config within the execution of an operation.
+//!
+//! There are three separate layer types to be aware of when using a `ConfigBag`:
+//! 1. [`Layer`](crate::config_bag::Layer) - A mutable layer. This is usually only used for adding config
+//!    to the `ConfigBag`, but is also used for the interceptor state.
+//! 2. [`CloneableLayer`](crate::config_bag::CloneableLayer) - Identical to `Layer`, except that it requires
+//!    `Clone` bounds on the items added to it so that it can be deep cloned. Can be converted to a `Layer`
+//!    while retaining the cloneability of its items such that the resulting layer could be cloned as long as
+//!    nothing else is added to it later. A `Layer` cannot be converted back into a `CloneableLayer`.
+//! 3. [`FrozenLayer`](crate::config_bag::FrozenLayer) - Basically an [`Arc`](std::sync::Arc) wrapper around
+//!    a `Layer`. This wrapper is used to make the layer immutable, and to make it shareable between multiple
+//!    `ConfigBag` instances. The frozen layer can be converted back to a `Layer` if there is only a single reference to it.
+//!
+//! All of `Layer`, `CloneableLayer`, `FrozenLayer`, and `ConfigBag` are considered to be "bag" types.
+//! That is, they store arbitrary types so long as they implement the [`Storable`](crate::config_bag::Storable) trait.
+//!
+//! A `Storable` requires a `Storer` to be configured, and the storer allows for storables to be stored
+//! in two different modes:
+//! 1. [`StoreReplace`](crate::config_bag::StoreReplace) - Only one value of this type is allowed in a bag, and
+//!    calling [`store_put()`](crate::config_bag::Layer::store_put) multiple times will replace the existing value
+//!    in the bag. Calling [`load::<T>()`](crate::config_bag::Layer::load) returns exactly one value, if present.
+//! 2. [`StoreAppend`](crate::config_bag::StoreAppend) - Multiple values of this type are allowed in a bag, and
+//!    calling [`store_append()`](crate::config_bag::Layer::store_append) will add an additional value of this type
+//!    to the bag. Calling [`load::<T>()`](crate::config_bag::Layer::load) returns an iterator over multiple values.
+//!
+//! # Examples
+//!
+//! Creating a storable data type with `StoreReplace`:
+//!
+//! ```no_run
+//! use aws_smithy_types::config_bag::{Storable, StoreReplace};
+//!
+//! #[derive(Debug)]
+//! struct SomeDataType {
+//!     some_data: String,
+//! }
+//! impl Storable for SomeDataType {
+//!     type Storer = StoreReplace<Self>;
+//! }
+//! ```
+//!
+//! Creating a storable data type with `StoreAppend`:
+//!
+//! ```no_run
+//! use aws_smithy_types::config_bag::{Storable, StoreAppend};
+//!
+//! #[derive(Debug)]
+//! struct SomeDataType {
+//!     some_data: String,
+//! }
+//! impl Storable for SomeDataType {
+//!     type Storer = StoreAppend<Self>;
+//! }
+//! ```
+//!
+//! Storing a storable in a bag when it is configured for `StoreReplace`:
+//!
+//! ```no_run
+//! # use aws_smithy_types::config_bag::{Storable, StoreReplace};
+//! # #[derive(Clone, Debug)]
+//! # struct SomeDataType { some_data: String }
+//! # impl Storable for SomeDataType { type Storer = StoreReplace<Self>; }
+//! use aws_smithy_types::config_bag::{CloneableLayer, Layer};
+//!
+//! let mut layer = Layer::new("example");
+//! layer.store_put(SomeDataType { some_data: "some data".to_string() });
+//!
+//! // `store_put` can be called again to replace the original value:
+//! layer.store_put(SomeDataType { some_data: "replacement".to_string() });
+//!
+//! // Note: `SomeDataType` below must implement `Clone` to work with `CloneableLayer`
+//! let mut cloneable = CloneableLayer::new("example");
+//! cloneable.store_put(SomeDataType { some_data: "some data".to_string() });
+//! ```
+//!
+//! Storing a storable in a bag when it is configured for `StoreAppend`:
+//!
+//! ```no_run
+//! # use aws_smithy_types::config_bag::{Storable, StoreAppend};
+//! # #[derive(Clone, Debug)]
+//! # struct SomeDataType { some_data: String }
+//! # impl Storable for SomeDataType { type Storer = StoreAppend<Self>; }
+//! use aws_smithy_types::config_bag::{CloneableLayer, Layer};
+//!
+//! let mut layer = Layer::new("example");
+//! layer.store_append(SomeDataType { some_data: "1".to_string() });
+//! layer.store_append(SomeDataType { some_data: "2".to_string() });
+//! ```
+//!
+//! Loading a `StoreReplace` value from a bag:
+//!
+//! ```no_run
+//! # use aws_smithy_types::config_bag::{Storable, StoreReplace};
+//! # #[derive(Clone, Debug)]
+//! # struct SomeDataType { some_data: String }
+//! # impl Storable for SomeDataType { type Storer = StoreReplace<Self>; }
+//! # use aws_smithy_types::config_bag::Layer;
+//! # let layer = Layer::new("example");
+//! let maybe_value: Option<&SomeDataType> = layer.load::<SomeDataType>();
+//! ```
+//!
+//! Loading a `StoreAppend` value from a bag:
+//!
+//! ```no_run
+//! # use aws_smithy_types::config_bag::{Storable, StoreAppend};
+//! # #[derive(Clone, Debug)]
+//! # struct SomeDataType { some_data: String }
+//! # impl Storable for SomeDataType { type Storer = StoreAppend<Self>; }
+//! # use aws_smithy_types::config_bag::Layer;
+//! # let layer = Layer::new("example");
+//! let values: Vec<SomeDataType> = layer.load::<SomeDataType>().cloned().collect();
+//!
+//! // or iterate over them directly:
+//! for value in layer.load::<SomeDataType>() {
+//!     # let _ = value;
+//!     // ...
+//! }
+//! ```
+//!
 mod storable;
 mod typeid_map;
 
@@ -25,18 +146,31 @@ use std::sync::Arc;
 
 pub use storable::{AppendItemIter, Storable, Store, StoreAppend, StoreReplace};
 
-/// [`FrozenLayer`] is the "locked" form of [`Layer`].
+/// [`FrozenLayer`] is the immutable and shareable form of [`Layer`].
 ///
-/// [`ConfigBag`] contains a ordered collection of [`FrozenLayer`]
+/// See the [module docs](crate::config_bag) for more documentation.
 #[derive(Clone, Debug)]
 #[must_use]
 pub struct FrozenLayer(Arc<Layer>);
+
+impl FrozenLayer {
+    /// Attempts to convert this bag directly into a [`Layer`] if no other references exist.
+    pub fn try_modify(self) -> Option<Layer> {
+        Arc::try_unwrap(self.0).ok()
+    }
+}
 
 impl Deref for FrozenLayer {
     type Target = Layer;
 
     fn deref(&self) -> &Self::Target {
         &self.0
+    }
+}
+
+impl From<Layer> for FrozenLayer {
+    fn from(layer: Layer) -> Self {
+        FrozenLayer(Arc::new(layer))
     }
 }
 
@@ -47,14 +181,14 @@ pub(crate) mod value {
         Set(T),
         ExplicitlyUnset(&'static str),
     }
-}
-use value::Value;
 
-impl<T: Default> Default for Value<T> {
-    fn default() -> Self {
-        Self::Set(Default::default())
+    impl<T: Default> Default for Value<T> {
+        fn default() -> Self {
+            Self::Set(Default::default())
+        }
     }
 }
+use value::Value;
 
 /// [`CloneableLayer`] allows itself to be cloned. This is useful when a type that implements
 /// `Clone` wishes to store a config layer.
@@ -79,6 +213,8 @@ impl<T: Default> Default for Value<T> {
 /// let mut layer = CloneableLayer::new("layer");
 /// layer.store_put(MyNotCloneStruct);
 /// ```
+///
+/// See the [module docs](crate::config_bag) for more documentation.
 #[derive(Debug, Default)]
 pub struct CloneableLayer(Layer);
 
@@ -113,6 +249,7 @@ impl CloneableLayer {
         Self(Layer::new(name))
     }
 
+    /// Converts this layer into a frozen layer that can no longer be mutated.
     pub fn freeze(self) -> FrozenLayer {
         self.0.into()
     }
@@ -191,6 +328,8 @@ impl CloneableLayer {
 }
 
 /// A named layer comprising a config bag
+///
+/// See the [module docs](crate::config_bag) for more documentation.
 #[derive(Default)]
 pub struct Layer {
     name: Cow<'static, str>,
@@ -236,10 +375,12 @@ impl Layer {
         self
     }
 
-    pub fn empty(&self) -> bool {
+    /// Returns true if this layer is empty.
+    pub fn is_empty(&self) -> bool {
         self.props.is_empty()
     }
 
+    /// Converts this layer into a frozen layer that can no longer be mutated.
     pub fn freeze(self) -> FrozenLayer {
         self.into()
     }
@@ -253,6 +394,7 @@ impl Layer {
         }
     }
 
+    /// Changes the name of this layer.
     pub fn with_name(self, name: impl Into<Cow<'static, str>>) -> Self {
         Self {
             name: name.into(),
@@ -373,19 +515,9 @@ impl Layer {
     }
 }
 
-impl FrozenLayer {
-    /// Attempts to convert this bag directly into a [`ConfigBag`] if no other references exist
-    ///
-    /// This allows modifying the top layer of the bag. [`Self::add_layer`] may be
-    /// used to add a new layer to the bag.
-    pub fn try_modify(self) -> Option<Layer> {
-        Arc::try_unwrap(self.0).ok()
-    }
-}
-
-/// Layered Configuration Structure
+/// Layered configuration structure
 ///
-/// [`ConfigBag`] is the "unlocked" form of the bag. Only the top layer of the bag may be unlocked.
+/// See the [module docs](crate::config_bag) for more documentation.
 #[must_use]
 pub struct ConfigBag {
     interceptor_state: Layer,
@@ -408,10 +540,6 @@ impl Debug for ConfigBag {
 
 impl ConfigBag {
     /// Create a new config bag "base".
-    ///
-    /// Configuration may then be "layered" onto the base by calling
-    /// [`ConfigBag::store_put`], [`ConfigBag::store_or_unset`], [`ConfigBag::store_append`]. Layers
-    /// of configuration may then be "frozen" (made immutable) by calling [`ConfigBag::freeze`].
     pub fn base() -> Self {
         ConfigBag {
             interceptor_state: Layer {
@@ -422,7 +550,8 @@ impl ConfigBag {
         }
     }
 
-    pub fn of_layers(layers: Vec<Layer>) -> Self {
+    /// Create a [`ConfigBag`] consisting of the given layers.
+    pub fn of_layers(layers: impl IntoIterator<Item = Layer>) -> Self {
         let mut bag = ConfigBag::base();
         for layer in layers {
             bag.push_layer(layer);
@@ -430,16 +559,19 @@ impl ConfigBag {
         bag
     }
 
+    /// Add the given layer to the config bag.
     pub fn push_layer(&mut self, layer: Layer) -> &mut Self {
         self.tail.push(layer.freeze());
         self
     }
 
+    /// Add a frozen/shared layer to the config bag.
     pub fn push_shared_layer(&mut self, layer: FrozenLayer) -> &mut Self {
         self.tail.push(layer);
         self
     }
 
+    /// Return a reference to the mutable interceptor state.
     pub fn interceptor_state(&mut self) -> &mut Layer {
         &mut self.interceptor_state
     }
@@ -516,20 +648,37 @@ impl ConfigBag {
     /// Add another layer to this configuration bag
     ///
     /// Hint: If you want to re-use this layer, call `freeze` first.
-    /// ```
-    /// /*
-    /// use aws_smithy_types::config_bag::{ConfigBag, Layer};
-    /// let bag = ConfigBag::base();
-    /// let first_layer = bag.with_fn("a", |b: &mut Layer| { b.put("a"); });
-    /// let second_layer = first_layer.with_fn("other", |b: &mut Layer| { b.put(1i32); });
-    /// // The number is only in the second layer
-    /// assert_eq!(first_layer.get::<i32>(), None);
-    /// assert_eq!(second_layer.get::<i32>(), Some(&1));
     ///
-    /// // The string is in both layers
-    /// assert_eq!(first_layer.get::<&'static str>(), Some(&"a"));
-    /// assert_eq!(second_layer.get::<&'static str>(), Some(&"a"));
-    /// */
+    /// # Examples
+    /// ```
+    /// use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
+    ///
+    /// #[derive(Debug, Eq, PartialEq)]
+    /// struct ExampleStr(&'static str);
+    /// impl Storable for ExampleStr {
+    ///     type Storer = StoreReplace<Self>;
+    /// }
+    ///
+    /// #[derive(Debug, Eq, PartialEq)]
+    /// struct ExampleInt(i32);
+    /// impl Storable for ExampleInt {
+    ///     type Storer = StoreReplace<Self>;
+    /// }
+    ///
+    /// let mut bag = ConfigBag::base();
+    /// bag = bag.with_fn("first", |layer: &mut Layer| { layer.store_put(ExampleStr("a")); });
+    ///
+    /// // We can now load the example string out
+    /// assert_eq!(bag.load::<ExampleStr>(), Some(&ExampleStr("a")));
+    ///
+    /// // But there isn't a number stored in the bag yet
+    /// assert_eq!(bag.load::<ExampleInt>(), None);
+    ///
+    /// // Add a layer with an example int
+    /// bag = bag.with_fn("second", |layer: &mut Layer| { layer.store_put(ExampleInt(1)); });
+    ///
+    /// // Now the example int can be retrieved
+    /// assert_eq!(bag.load::<ExampleInt>(), Some(&ExampleInt(1)));
     /// ```
     pub fn with_fn(
         self,
@@ -574,7 +723,7 @@ impl ConfigBag {
     }
 }
 
-/// Iterator of items returned from config_bag
+/// Iterator of items returned from [`ConfigBag`].
 pub struct ItemIter<'a, T> {
     inner: BagIter<'a>,
     t: PhantomData<T>,
@@ -615,12 +764,6 @@ impl<'a> Iterator for BagIter<'a> {
         } else {
             self.tail.next().map(|t| t.deref())
         }
-    }
-}
-
-impl From<Layer> for FrozenLayer {
-    fn from(layer: Layer) -> Self {
-        FrozenLayer(Arc::new(layer))
     }
 }
 

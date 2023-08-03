@@ -169,9 +169,6 @@ pub mod client;
 /// Configuration for Amazon API Gateway.
 pub mod config;
 
-/// Endpoint resolution functionality.
-pub mod endpoint;
-
 /// Common errors and error handling utilities.
 pub mod error;
 
@@ -190,14 +187,13 @@ pub mod primitives;
 pub mod types;
 
 ///
-pub mod middleware;
-
-///
-mod no_credentials;
-
-mod lens;
+mod apigateway_interceptors;
 
 pub(crate) mod protocol_serde;
+
+mod serialization_settings;
+
+mod lens;
 
 mod endpoint_lib;
 

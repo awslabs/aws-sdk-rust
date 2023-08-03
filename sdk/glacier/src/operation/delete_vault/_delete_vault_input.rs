@@ -19,6 +19,11 @@ impl DeleteVaultInput {
         self.vault_name.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for DeleteVaultInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl DeleteVaultInput {
     /// Creates a new builder-style object to manufacture [`DeleteVaultInput`](crate::operation::delete_vault::DeleteVaultInput).
     pub fn builder() -> crate::operation::delete_vault::builders::DeleteVaultInputBuilder {

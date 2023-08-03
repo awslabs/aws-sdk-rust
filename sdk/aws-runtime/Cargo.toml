@@ -17,6 +17,7 @@ event-stream = ["dep:aws-smithy-eventstream", "aws-sigv4/sign-eventstream"]
 test-util = []
 
 [dependencies]
+fastrand = "2.0.0"
 http = "0.2.3"
 percent-encoding = "2.1.0"
 tracing = "0.1"
@@ -64,7 +65,6 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.uuid]
 version = "1"
-features = ["v4", "fast-rng"]
 
 [dev-dependencies]
 proptest = "1.2"

@@ -12,7 +12,7 @@ impl StartSupportDataExportInputBuilder {
         crate::operation::start_support_data_export::StartSupportDataExportOutput,
         ::aws_smithy_http::result::SdkError<
             crate::operation::start_support_data_export::StartSupportDataExportError,
-            ::aws_smithy_http::operation::Response,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
         let mut fluent_builder = client.start_support_data_export();
@@ -27,6 +27,7 @@ impl StartSupportDataExportInputBuilder {
 pub struct StartSupportDataExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_support_data_export::builders::StartSupportDataExportInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl StartSupportDataExportFluentBuilder {
     /// Creates a new `StartSupportDataExport`.
@@ -34,50 +35,48 @@ impl StartSupportDataExportFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the StartSupportDataExport as a reference.
     pub fn as_input(&self) -> &crate::operation::start_support_data_export::builders::StartSupportDataExportInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_support_data_export::StartSupportDataExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
         crate::operation::start_support_data_export::StartSupportDataExportOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_support_data_export::StartSupportDataExportError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::start_support_data_export::StartSupportDataExport::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::start_support_data_export::StartSupportDataExport::orchestrate(&runtime_plugins, input).await
+    }
+
+    #[doc(hidden)]
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
+        self,
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::start_support_data_export::StartSupportDataExportOutput,
+        crate::operation::start_support_data_export::StartSupportDataExportError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -91,23 +90,36 @@ impl StartSupportDataExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_support_data_export::StartSupportDataExportOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_support_data_export::StartSupportDataExportError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        self.send_middleware().await
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_support_data_export::StartSupportDataExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::start_support_data_export::StartSupportDataExportOutput,
+            crate::operation::start_support_data_export::StartSupportDataExportError,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     /// <p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
     /// <p> </p>

@@ -12,7 +12,7 @@ impl DescribePatchPropertiesInputBuilder {
         crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
         ::aws_smithy_http::result::SdkError<
             crate::operation::describe_patch_properties::DescribePatchPropertiesError,
-            ::aws_smithy_http::operation::Response,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
         let mut fluent_builder = client.describe_patch_properties();
@@ -90,6 +90,7 @@ impl DescribePatchPropertiesInputBuilder {
 pub struct DescribePatchPropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder,
+    config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl DescribePatchPropertiesFluentBuilder {
     /// Creates a new `DescribePatchProperties`.
@@ -97,50 +98,48 @@ impl DescribePatchPropertiesFluentBuilder {
         Self {
             handle,
             inner: ::std::default::Default::default(),
+            config_override: ::std::option::Option::None,
         }
     }
     /// Access the DescribePatchProperties as a reference.
     pub fn as_input(&self) -> &crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder {
         &self.inner
     }
-    // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_patch_properties::DescribePatchProperties,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
+    pub async fn send_orchestrator(
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::describe_patch_properties::DescribePatchProperties::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::describe_patch_properties::DescribePatchProperties::orchestrate(&runtime_plugins, input).await
+    }
+
+    #[doc(hidden)]
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
+    pub async fn customize_orchestrator(
+        self,
+    ) -> crate::client::customize::orchestrator::CustomizableOperation<
+        crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
+        crate::operation::describe_patch_properties::DescribePatchPropertiesError,
+    > {
+        crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        }
     }
     /// Sends the request and returns the response.
     ///
@@ -154,23 +153,36 @@ impl DescribePatchPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        self.send_middleware().await
+        self.send_orchestrator().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent.
+    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_patch_properties::DescribePatchProperties,
-            ::aws_http::retry::AwsResponseRetryClassifier,
+        crate::client::customize::orchestrator::CustomizableOperation<
+            crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
+            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>,
     > {
-        self.customize_middleware().await
+        ::std::result::Result::Ok(self.customize_orchestrator().await)
+    }
+    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
+        self.set_config_override(Some(config_override.into()));
+        self
+    }
+
+    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+        self.config_override = config_override;
+        self
     }
     /// Create a paginator for this request
     ///

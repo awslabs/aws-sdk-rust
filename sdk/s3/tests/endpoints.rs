@@ -62,7 +62,7 @@ async fn dual_stack() {
     );
 }
 
-#[cfg(aws_sdk_orchestrator_mode)]
+#[cfg(not(aws_sdk_middleware_mode))]
 #[tokio::test]
 async fn multi_region_access_points() {
     let (_captured_request, client) = test_client(|b| b);
@@ -84,7 +84,7 @@ async fn multi_region_access_points() {
     );
 }
 
-#[cfg(not(aws_sdk_orchestrator_mode))]
+#[cfg(aws_sdk_middleware_mode)]
 #[tokio::test]
 async fn multi_region_access_points() {
     let (_captured_request, client) = test_client(|b| b);

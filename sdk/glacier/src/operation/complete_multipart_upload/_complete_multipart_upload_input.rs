@@ -37,6 +37,11 @@ impl CompleteMultipartUploadInput {
         self.checksum.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for CompleteMultipartUploadInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl CompleteMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadInput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadInput).
     pub fn builder() -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder {

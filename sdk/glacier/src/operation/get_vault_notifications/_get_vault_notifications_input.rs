@@ -19,6 +19,11 @@ impl GetVaultNotificationsInput {
         self.vault_name.as_deref()
     }
 }
+impl crate::glacier_interceptors::GlacierAccountId for GetVaultNotificationsInput {
+    fn account_id_mut(&mut self) -> &mut Option<String> {
+        &mut self.account_id
+    }
+}
 impl GetVaultNotificationsInput {
     /// Creates a new builder-style object to manufacture [`GetVaultNotificationsInput`](crate::operation::get_vault_notifications::GetVaultNotificationsInput).
     pub fn builder() -> crate::operation::get_vault_notifications::builders::GetVaultNotificationsInputBuilder {

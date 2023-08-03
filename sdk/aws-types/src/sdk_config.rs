@@ -117,7 +117,7 @@ impl Builder {
         self
     }
 
-    /// Set the endpoint url to use when making requests.
+    /// Set the endpoint URL to use when making requests.
     /// # Examples
     /// ```
     /// use aws_types::SdkConfig;
@@ -128,7 +128,7 @@ impl Builder {
         self
     }
 
-    /// Set the endpoint url to use when making requests.
+    /// Set the endpoint URL to use when making requests.
     pub fn set_endpoint_url(&mut self, endpoint_url: Option<String>) -> &mut Self {
         self.endpoint_url = endpoint_url;
         self
